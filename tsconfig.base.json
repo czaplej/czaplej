@@ -20,7 +20,8 @@
       "@czaplej/use-ref-constant": ["packages/use-ref-constant/src/index.ts"],
       "@czaplej/use-behavior-subject": [
         "packages/use-behavior-subject/src/index.ts"
-      ]
+      ],
+      "decopyfy": ["packages/decopyfy/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

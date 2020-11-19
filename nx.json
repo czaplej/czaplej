@@ -38,6 +38,9 @@
     "formik-demo-e2e": {
       "tags": [],
       "implicitDependencies": ["formik-demo"]
+    },
+    "decopyfy": {
+      "tags": []
     }
   },
   "workspaceLayout": {

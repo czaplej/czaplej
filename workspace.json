@@ -265,6 +265,46 @@
           }
         }
       }
+    },
+    "decopyfy": {
+      "root": "packages/decopyfy",
+      "sourceRoot": "packages/decopyfy/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/decopyfy/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/packages/decopyfy",
+            "tsConfig": "packages/decopyfy/tsconfig.lib.json",
+            "project": "packages/decopyfy/package.json",
+            "entryFile": "packages/decopyfy/src/index.ts",
+            "external": ["react", "react-dom", "react-is", "styled-components"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/decopyfy/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
