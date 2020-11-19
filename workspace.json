@@ -1,8 +1,274 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "use-subject": {
+      "root": "packages/use-subject",
+      "sourceRoot": "packages/use-subject/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/use-subject/**/*.js",
+              "packages/use-subject/**/*.jsx",
+              "packages/use-subject/**/*.ts",
+              "packages/use-subject/**/*.tsx",
+              "packages/use-subject/**/*.spec.ts",
+              "packages/use-subject/**/*.spec.tsx",
+              "packages/use-subject/**/*.spec.js",
+              "packages/use-subject/**/*.spec.jsx",
+              "packages/use-subject/**/*.d.ts"
+            ]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/packages/use-subject",
+            "tsConfig": "packages/use-subject/tsconfig.lib.json",
+            "project": "packages/use-subject/package.json",
+            "entryFile": "packages/use-subject/src/index.ts",
+            "external": ["react", "react-dom", "@czaplej/use-ref-constant"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/use-subject/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "use-ref-constant": {
+      "root": "packages/use-ref-constant",
+      "sourceRoot": "packages/use-ref-constant/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/use-ref-constant/**/*.js",
+              "packages/use-ref-constant/**/*.jsx",
+              "packages/use-ref-constant/**/*.ts",
+              "packages/use-ref-constant/**/*.tsx",
+              "packages/use-ref-constant/**/*.spec.ts",
+              "packages/use-ref-constant/**/*.spec.tsx",
+              "packages/use-ref-constant/**/*.spec.js",
+              "packages/use-ref-constant/**/*.spec.jsx",
+              "packages/use-ref-constant/**/*.d.ts"
+            ]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/packages/use-ref-constant",
+            "tsConfig": "packages/use-ref-constant/tsconfig.lib.json",
+            "project": "packages/use-ref-constant/package.json",
+            "entryFile": "packages/use-ref-constant/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/use-ref-constant/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "use-behavior-subject": {
+      "root": "packages/use-behavior-subject",
+      "sourceRoot": "packages/use-behavior-subject/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/use-behavior-subject/**/*.js",
+              "packages/use-behavior-subject/**/*.jsx",
+              "packages/use-behavior-subject/**/*.ts",
+              "packages/use-behavior-subject/**/*.tsx",
+              "packages/use-behavior-subject/**/*.spec.ts",
+              "packages/use-behavior-subject/**/*.spec.tsx",
+              "packages/use-behavior-subject/**/*.spec.js",
+              "packages/use-behavior-subject/**/*.spec.jsx",
+              "packages/use-behavior-subject/**/*.d.ts"
+            ]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/packages/use-behavior-subject",
+            "tsConfig": "packages/use-behavior-subject/tsconfig.lib.json",
+            "project": "packages/use-behavior-subject/package.json",
+            "entryFile": "packages/use-behavior-subject/src/index.ts",
+            "external": ["react", "react-dom"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/use-behavior-subject/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "formik-demo": {
+      "root": "packages/formik-demo",
+      "sourceRoot": "packages/formik-demo/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/packages/formik-demo",
+            "index": "packages/formik-demo/src/index.html",
+            "main": "packages/formik-demo/src/main.tsx",
+            "polyfills": "packages/formik-demo/src/polyfills.ts",
+            "tsConfig": "packages/formik-demo/tsconfig.app.json",
+            "assets": [
+              "packages/formik-demo/src/favicon.ico",
+              "packages/formik-demo/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "packages/formik-demo/src/environments/environment.ts",
+                  "with": "packages/formik-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "formik-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "formik-demo:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/formik-demo/**/*.js",
+              "packages/formik-demo/**/*.jsx",
+              "packages/formik-demo/**/*.ts",
+              "packages/formik-demo/**/*.tsx",
+              "packages/formik-demo/**/*.spec.ts",
+              "packages/formik-demo/**/*.spec.tsx",
+              "packages/formik-demo/**/*.spec.js",
+              "packages/formik-demo/**/*.spec.jsx",
+              "packages/formik-demo/**/*.d.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/formik-demo/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "formik-demo-e2e": {
+      "root": "packages/formik-demo-e2e",
+      "sourceRoot": "packages/formik-demo-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/formik-demo-e2e/cypress.json",
+            "tsConfig": "packages/formik-demo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "formik-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "formik-demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/formik-demo-e2e/src/**/*.ts",
+              "packages/formik-demo-e2e/src/**/*.js"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/react"
   },
   "schematics": {
     "@nrwl/workspace": {
@@ -17,13 +283,19 @@
     },
     "@nrwl/react": {
       "application": {
-        "linter": "eslint"
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
       },
       "library": {
+        "style": "styled-components",
         "linter": "eslint"
       },
       "storybook-configuration": {
         "linter": "eslint"
+      },
+      "component": {
+        "style": "styled-components"
       }
     },
     "@nrwl/next": {
@@ -62,5 +334,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "formik-demo"
 }

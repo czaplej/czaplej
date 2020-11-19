@@ -1,0 +1,7 @@
+{
+  "name": "@czaplej/use-subject",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@czaplej/use-ref-constant": "0.0.1"
+  }
+}

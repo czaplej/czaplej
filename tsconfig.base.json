@@ -15,7 +15,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@czaplej/use-subject": ["packages/use-subject/src/index.ts"],
+      "@czaplej/use-ref-constant": ["packages/use-ref-constant/src/index.ts"],
+      "@czaplej/use-behavior-subject": [
+        "packages/use-behavior-subject/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

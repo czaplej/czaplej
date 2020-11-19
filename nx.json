@@ -9,9 +9,10 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "tsconfig.json": "*",
     "tslint.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    "tsconfig.base.json": "*",
+    ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -21,7 +22,24 @@
       }
     }
   },
-  "projects": {},
+  "projects": {
+    "use-subject": {
+      "tags": []
+    },
+    "use-ref-constant": {
+      "tags": []
+    },
+    "use-behavior-subject": {
+      "tags": []
+    },
+    "formik-demo": {
+      "tags": []
+    },
+    "formik-demo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["formik-demo"]
+    }
+  },
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
