@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/packages/use-behavior-subject',
     '<rootDir>/packages/formik-demo',
     '<rootDir>/packages/decopyfy',
+    '<rootDir>/packages/decomparefy',
   ],
 };

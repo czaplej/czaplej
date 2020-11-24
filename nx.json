@@ -41,6 +41,9 @@
     },
     "decopyfy": {
       "tags": []
+    },
+    "decomparefy": {
+      "tags": []
     }
   },
   "workspaceLayout": {

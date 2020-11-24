@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { useEffect, useRef, useState } from 'react';
 import isEqual from 'react-fast-compare';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { skip } from 'rxjs/operators';
-import { useRefConstant } from '@czaplej/use-ref-constant';
+import { clone } from 'decopyfy';
+
 
 type UseBehaviorSubjectProps<T extends unknown> = {
   subject: BehaviorSubject<T>;
@@ -42,7 +44,6 @@ export const useBehaviorSubject = <T extends unknown>(props: UseBehaviorSubjectP
             subject.next(value as T);
           }
         } else {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
           // @ts-ignore
           const newState = { ...prevState, ...value };
           if (!isEqual(newState, state)) {
@@ -64,3 +65,60 @@ export const createSubject = <T extends unknown>(initialValue?: T): BehaviorSubj
  return new BehaviorSubject<T>(initialValue)
 }
 
+export const useBehaviorSubjectSelector = <TState, TSelected>(
+  selector: (state: TState) => TSelected,
+  // equalityFn?: (left: TSelected, right: TSelected) => boolean,
+  subject?: BehaviorSubject<TState>
+): TSelected => {
+  const selectorValue = useRef<TSelected>(selector(subject.getValue()));
+  const [state, setState] = useState(1);
+  useEffect(() => {
+    const subs = subject?.subscribe({
+      next: (value) => {
+        const newValue = selector(value);
+        if (!isEqual(newValue, selectorValue.current)) {
+          selectorValue.current = newValue;
+          setState((prevState) => ++prevState);
+        }
+      },
+    });
+
+    return () => {
+      subs?.unsubscribe();
+    };
+  }, [selectorValue.current]);
+  return selector(clone(subject.value));
+};
+
+type UseBehaviorSubjectSetStateAction<S> = Partial<S> | ((prevState: S) => Partial<S>);
+
+export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorSubject<T>) =>
+{
+  return (callback: UseBehaviorSubjectSetStateAction<T>) => {
+    let value;
+    if (typeof callback === 'function') {
+      value = callback(clone(subject.value));
+    } else {
+      value = callback;
+    }
+    const prevState = subject.getValue();
+    if (typeof prevState === 'object') {
+      if (Array.isArray(prevState)) {
+        // const newState = [...prevState, value]
+        if (!isEqual(value, prevState)) {
+          subject.next(value as T);
+        }
+      } else {
+        // @ts-ignore
+        const newState = { ...prevState, ...value };
+        if (!isEqual(newState, prevState)) {
+          subject.next(newState);
+        }
+      }
+    } else {
+      if (!isEqual(value, prevState)) {
+        subject.next(value as T);
+      }
+    }
+  };
+}
