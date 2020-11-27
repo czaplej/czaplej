@@ -1,75 +1,87 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { useEffect, useRef, useState } from 'react';
-import isEqual from 'react-fast-compare';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { isEqual } from 'decomparefy';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { skip } from 'rxjs/operators';
 import { clone } from 'decopyfy';
 
+function comparePrevStateAndNewValue<T extends unknown>(subject: BehaviorSubject<T>, newState: (Partial<T> | T)) {
+  const prevState = subject.getValue();
+  if (typeof prevState !== 'object') {
+    if (!isEqual(newState, prevState)) {
+      subject.next(newState as T);
+    }
+  } else {
+    let newStateUpdate;
+    if (Array.isArray(prevState)) {
+      newStateUpdate = [...prevState, ...newState as T[]];
+      if (!isEqual(newStateUpdate, prevState)) {
+        subject.next(newStateUpdate as T);
+      }
+    } else {
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      newStateUpdate = { ...(prevState as object), ...(newState as object) };
+      if (!isEqual(newStateUpdate, prevState)) {
+        subject.next(newStateUpdate as T);
+      }
+    }
+  }
+}
 
 type UseBehaviorSubjectProps<T extends unknown> = {
   subject: BehaviorSubject<T>;
   initialState?: T;
   pipe?: (subject: BehaviorSubject<T>) => Observable<T>;
 };
+
 export const useBehaviorSubject = <T extends unknown>(props: UseBehaviorSubjectProps<T>) => {
   const { subject, initialState, pipe } = props;
-  const [state, setState] = useState<T>(subject.getValue() ?? initialState);
+  if (!subject) {
+    throw new Error('useBehaviorSubject must have the subject Prop');
+  }
+  const [state, setUseState] = useState<number>(1);
   const getSubject$ = pipe ? pipe(subject) : subject;
+  const setInitialState = useCallback(() => subject.next(initialState), []);
   useEffect(() => {
     if (subject.observers.length === 0 && initialState) {
       subject.next(initialState);
     }
     const subscription = getSubject$.pipe(skip(1)).subscribe({
       next: (value) => {
-        setState(value);
+        setUseState(prevState => ++prevState);
       },
       complete: () => {
         console.log('BEHAVIOR SUBJECT COMPLETED');
-      },
+      }
     });
     return () => {
       subscription.unsubscribe();
       if (subject.observers.length === 0) {
-        service$.setInitialState();
+        setInitialState();
       }
     };
   }, []);
-  const service$ = {
-    setInitialState: () => subject.next(initialState),
-    setState: (value: Partial<T> | T) => {
-      const prevState = subject.getValue();
-      if (typeof prevState === 'object') {
-        if (Array.isArray(prevState)) {
-          if (!isEqual(value, state)) {
-            subject.next(value as T);
-          }
-        } else {
-          // @ts-ignore
-          const newState = { ...prevState, ...value };
-          if (!isEqual(newState, state)) {
-            subject.next(newState);
-          }
-        }
-      } else {
-        if (!isEqual(value, state)) {
-          subject.next(value as T);
-        }
-      }
-    },
-  };
-  return { state, service$, setState: service$.setState };
+
+  const setState = useCallback((value: Partial<T> | T) => {
+    comparePrevStateAndNewValue(subject, value);
+  }, []);
+
+  return { state: clone(subject.value), setInitialState, setState };
 };
 
 export const createSubject = <T extends unknown>(initialValue?: T): BehaviorSubject<T> => {
-  console.log("CREATE SUBJECT")
- return new BehaviorSubject<T>(initialValue)
-}
+  console.log('CREATE SUBJECT');
+  return new BehaviorSubject<T>(initialValue);
+};
 
 export const useBehaviorSubjectSelector = <TState, TSelected>(
   selector: (state: TState) => TSelected,
   // equalityFn?: (left: TSelected, right: TSelected) => boolean,
   subject?: BehaviorSubject<TState>
 ): TSelected => {
+  if (!subject) {
+    throw new Error('useBehaviorSubjectSelector must have the subject Prop');
+  }
   const selectorValue = useRef<TSelected>(selector(subject.getValue()));
   const [state, setState] = useState(1);
   useEffect(() => {
@@ -80,20 +92,22 @@ export const useBehaviorSubjectSelector = <TState, TSelected>(
           selectorValue.current = newValue;
           setState((prevState) => ++prevState);
         }
-      },
+      }
     });
 
     return () => {
       subs?.unsubscribe();
     };
-  }, [selectorValue.current]);
+  }, [selectorValue.current, subject]);
   return selector(clone(subject.value));
 };
 
 type UseBehaviorSubjectSetStateAction<S> = Partial<S> | ((prevState: S) => Partial<S>);
 
-export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorSubject<T>) =>
-{
+export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorSubject<T>) => {
+  if (!subject) {
+    throw new Error('useBehaviorSubjectDispatch must have the subject Prop');
+  }
   return (callback: UseBehaviorSubjectSetStateAction<T>) => {
     let value;
     if (typeof callback === 'function') {
@@ -101,24 +115,6 @@ export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorS
     } else {
       value = callback;
     }
-    const prevState = subject.getValue();
-    if (typeof prevState === 'object') {
-      if (Array.isArray(prevState)) {
-        // const newState = [...prevState, value]
-        if (!isEqual(value, prevState)) {
-          subject.next(value as T);
-        }
-      } else {
-        // @ts-ignore
-        const newState = { ...prevState, ...value };
-        if (!isEqual(newState, prevState)) {
-          subject.next(newState);
-        }
-      }
-    } else {
-      if (!isEqual(value, prevState)) {
-        subject.next(value as T);
-      }
-    }
+    comparePrevStateAndNewValue(subject, value);
   };
-}
+};

@@ -40,4 +40,12 @@ describe('useBehaviorSubject', () => {
     expect( result.current.state.value).toBe(333);
 
   });
+  it('should return  error', () => {
+    const { result, rerender } = renderHook(() =>
+      useBehaviorSubject({subject: undefined})
+    );
+    expect(result.error).toEqual(Error("useBehaviorSubject must have the subject Prop"))
+
+  });
+
 })
