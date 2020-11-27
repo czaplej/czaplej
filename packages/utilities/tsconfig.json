@@ -8,9 +8,6 @@
   },
   "files": [],
   "include": [],
-  "paths": {
-    "@czaplej/utilities": ["dist/libs/utilities"]
-  },
   "references": [
     {
       "path": "./tsconfig.lib.json"

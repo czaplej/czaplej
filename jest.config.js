@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/packages/formik-demo',
     '<rootDir>/packages/decopyfy',
     '<rootDir>/packages/decomparefy',
+    '<rootDir>/packages/utilities',
   ],
 };

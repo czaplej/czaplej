@@ -5365,10 +5365,10 @@ decode-uri-component@^0.2.0:
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
 "decomparefy@file:./dist/packages/decomparefy":
-  version "0.0.1"
+  version "1.0.0"
 
 "decopyfy@file:./dist/packages/decopyfy":
-  version "0.0.1"
+  version "1.0.0"
 
 deep-copy@^1.4.2:
   version "1.4.2"
@@ -6354,6 +6354,15 @@ fast-copy@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/fast-copy/-/fast-copy-2.1.0.tgz#99c1b842aee063f8212d6f749080c196a822b293"
   integrity sha512-j4VxAVJsu9NHveYrIj0+nJxXe2lOlibKTlyy0jH8DBwcuV6QyXTy0zTqZhmMKo7EYvuaUk/BFj/o6NU6grE5ag==
+
+fast-deep-equal-git@epoberezkin/fast-deep-equal#v3.1.1:
+  version "3.1.1"
+  resolved "https://codeload.github.com/epoberezkin/fast-deep-equal/tar.gz/32f8e288c2ed5b7f71aa47d5f9b980da5c9951aa"
+
+fast-deep-equal@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
+  integrity sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
 
 fast-deep-equal@^2.0.1:
   version "2.0.1"

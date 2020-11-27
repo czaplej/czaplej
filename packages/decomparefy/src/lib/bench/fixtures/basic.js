@@ -10,7 +10,183 @@ exports.foo = {
 		}
 	},
 	prop5: 1000,
-	prop6: new Date(2016, 2, 10)
+	prop6: new Date(2016, 2, 10),
+  prop7: [{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  }]
+
 }
 
 exports.bar = {
@@ -25,5 +201,180 @@ exports.bar = {
 			subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
 		},
 		subProp1: 'sub value1'
-	}
+	},
+  prop7: [{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  },{
+    subSubProp1: 'sub sub value1',
+    subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
+  }]
 };

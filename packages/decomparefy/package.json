@@ -1,4 +1,7 @@
 {
   "name": "decomparefy",
-  "version": "0.0.1"
+  "version": "1.0.0",
+  "description": "Deep data comparisons",
+  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
+  "license": "MIT"
 }

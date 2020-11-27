@@ -1,4 +1,37 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+export function toRawType(value):string {
+  if (value === void 0) return 'Undefined';
+  if (value === null) return 'Null';
+
+  let type = typeof value;
+  switch (type) {
+    case 'boolean':
+      return 'Boolean';
+    case 'string':
+      return 'String';
+    case 'number':
+      return 'Number';
+    case 'symbol':
+      return 'Symbol';
+    case 'function':
+      return 'Function';
+  }
+
+  type = Object.prototype.toString.call(value);
+  switch (type as string) {
+    case '[object Object]':
+      return 'Object';
+    case '[object Array]':
+      return 'Array';
+    case '[object Map]':
+      return 'Map';
+    case '[object Set]':
+      return 'Set';
+  }
+
+  return type.slice(8, -1);
+}
+
 function cloneOtherType(target) {
   const constrFun = target.constructor;
   switch (toRawType(target)) {
@@ -19,12 +52,6 @@ function cloneOtherType(target) {
   }
 }
 
-function toRawType (value): string {
-  const _toString = Object.prototype.toString;
-  const str = _toString.call(value)
-  return str.slice(8, -1)
-}
-
 function cloneSymbol(target) {
   return Object(Symbol.prototype.valueOf.call(target));
 }
@@ -37,9 +64,8 @@ function cloneReg(target) {
 }
 
 function forEach<T>(array: T[], iteratee: (val: T, index: number) => void): T[] {
-  let index = -1;
-  const length = array.length;
-  while (++index < length) {
+  let index = array.length;
+  while (index--) {
     iteratee(array[index], index);
   }
   return array;

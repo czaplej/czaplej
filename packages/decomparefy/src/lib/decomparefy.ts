@@ -1,25 +1,24 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-function check(b, key) {
-  for (const bKey of b.keys()) {
+import { toRawType } from './utility';
+
+function check(b, key, bKey = undefined) {
+  for (bKey of b.keys()) {
     if (decomparefy(key, bKey)) return bKey;
   }
   return undefined;
 }
 
-export const decomparefy = (a, b): boolean => {
+const decomparefy = (a, b): boolean => {
+  if (a === b) return true;
   const typeA = toRawType(a);
   const typeB = toRawType(b);
-  console.log(typeA, typeB, a, b);
-  // isNaN
-  if (a !== a && b !== b) return true;
 
   if (typeA !== typeB) return false;
+  else if (a !== a && b !== b) return true;
   else if (typeA === 'Null' || typeA === 'Undefined') return true;
-  else if (typeA === 'Number' || typeA === 'Boolean' || typeA === 'String') {
-    return a === b;
-  } else if (typeA === 'Date') return a.getTime() === b.getTime();
-  else if (typeA === 'RegExp') return a.toString() === b.toString();
+   else if (typeA === 'Date') return a.getTime() === b.getTime();
+  else if (typeA === 'RegExp') return a + '' === b + '';
   else if (typeA === 'Array') {
     if (a.length !== b.length) return false;
     if (a.length === 0) return true;
@@ -27,6 +26,23 @@ export const decomparefy = (a, b): boolean => {
     for (const [index, aElement] of a.entries()) {
       if (!decomparefy(aElement, b[index])) return false;
       isSame = true;
+    }
+    return isSame;
+  } else if (typeA === 'Object') {
+    const keysA = Object.keys(a);
+    const keysB = Object.keys(b);
+    if (keysA.length !== keysB.length) return false;
+    if (keysA.length === 0) return true;
+
+    let isSame = false;
+    for (const key of keysA) {
+      if (!keysB.includes(key)) return false;
+      if (toRawType(a[key]) === 'Function' || toRawType(b[key]) === 'Function') {
+        if (a[key] + '' !== b[key] + '') return false;
+      } else {
+        if (!decomparefy(a[key], b[key])) return false;
+        isSame = true;
+      }
     }
     return isSame;
   } else if (typeA === 'Function') {
@@ -48,8 +64,6 @@ export const decomparefy = (a, b): boolean => {
   } else if (typeA === 'Set') {
     if (a.size !== b.size) return false;
     for (const aVal of a) {
-      console.info(aVal);
-      console.info(toRawType(aVal));
       const type = toRawType(aVal);
       if (type === 'Object' || type === 'Array') {
         const bKey = check(b, aVal);
@@ -76,25 +90,10 @@ export const decomparefy = (a, b): boolean => {
     }
 
     return true;
-  } else if (typeA === 'Object') {
-    const keysA = Object.keys(a);
-    const keysB = Object.keys(b);
-    if (keysA.length !== keysB.length) return false;
-    if (keysA.length === 0) return true;
-
-    let isSame = false;
-    for (const key of keysA) {
-      if (!keysB.includes(key)) return false;
-      if (toRawType(a[key]) === 'Function' || toRawType(b[key]) === 'Function') {
-        if (a[key] + '' !== b[key] + '') return false;
-      } else {
-        if (!decomparefy(a[key], b[key])) return false;
-        isSame = true;
-      }
-    }
-    return isSame;
   }
-  return false;
+
+  // IsNaN
+  return (a !== a && b !== b);
 
 };
 
@@ -116,11 +115,3 @@ export function isEqual(a, b): boolean {
   }
 
 }
-
-
-function toRawType(value): string {
-  const _toString = Object.prototype.toString;
-  const str = _toString.call(value);
-  return str.slice(8, -1);
-}
-

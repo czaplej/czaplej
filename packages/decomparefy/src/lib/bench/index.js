@@ -36,6 +36,14 @@ console.time('decomparefy');
 const { isEqual } = require('decomparefy');
 console.timeEnd('decomparefy');
 
+console.time('decomparefy-typeof');
+const {  isEqualCheckTypeof } = require('decomparefy');
+console.timeEnd('decomparefy-typeof');
+
+console.time('react-fast-compare');
+const isReactCompare = require('react-fast-compare');
+console.timeEnd('react-fast-compare');
+
 function naiive(a, b) {
 	try {
 		deepStrictEqual(a, b);
@@ -49,7 +57,7 @@ const assert = (foo, bar, msg='') => deepStrictEqual(foo, bar, msg);
 
 function runner(name, contenders) {
 	const file = join(__dirname, 'fixtures', name + '.js');
-	const fixture = require(file);
+	const   fixture = require(file);
 
 	console.log('\n(%s) Validation: ', name);
 	Object.keys(contenders).forEach(name => {
@@ -87,21 +95,24 @@ function runner(name, contenders) {
 }
 
 runner('basic', {
-  'assert.deepStrictEqual': naiive,
-	'util.isDeepStrictEqual': isDeepStrictEqual,
-	'fast-deep-equal': fastdeep,
-	'lodash.isEqual': lodash,
-	'nano-equal': nanoequal,
-	'dequal/lite': lite.dequal,
-	'dequal': dequal,
+  // 'assert.deepStrictEqual': naiive,
+	// 'util.isDeepStrictEqual': isDeepStrictEqual,
+	// 'fast-deep-equal': fastdeep,
+	// 'lodash.isEqual': lodash,
+	// 'nano-equal': nanoequal,
+	// 'dequal/lite': lite.dequal,
+  'decomparefy-typeof': isEqualCheckTypeof,
   'decomparefy': isEqual,
+	'dequal': dequal,
+  'react-fast-compare': isReactCompare,
 });
 
 // Only keep those that pass
 runner('complex', {
-	'assert.deepStrictEqual': naiive,
-	'util.isDeepStrictEqual': isDeepStrictEqual,
-	'lodash.isEqual': lodash,
-	'dequal': dequal,
+	// 'assert.deepStrictEqual': naiive,
+	// 'util.isDeepStrictEqual': isDeepStrictEqual,
+	// 'lodash.isEqual': lodash,
+  'decomparefy-typeof': isEqualCheckTypeof,
   'decomparefy': isEqual,
+	'dequal': dequal,
 });

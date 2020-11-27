@@ -10,7 +10,7 @@ const cloneDefaults = clone()
 const cloneProto = clone({proto: true})
 const cloneCircles = clone({circles: true})
 const cloneCirclesProto = clone({circles: true, proto: true})
-const max = 1000
+const max = 1
 
 var run = bench([
   function benchDecopyfy (cb) {

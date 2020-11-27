@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment,@typescript-eslint/no-empty-function */
 import { isEqual } from './decomparefy';
 
 function same(a, b) {
@@ -8,6 +8,7 @@ function same(a, b) {
 function different(a, b) {
   expect(isEqual(a, b)).toBeFalsy();
 }
+
 describe('Decomparefy', () => {
   it('simple', () => {
     same(1, 1);
@@ -41,25 +42,52 @@ describe('Decomparefy', () => {
 
   it('Objects', () => {
     same({}, {});
-    same({ a:1, b:2 }, { a:1, b:2 });
-    same({ b:2, a:1 }, { a:1, b:2 });
+    same({ a: 1, b: 2 }, { a: 1, b: 2 });
+    same({ b: 2, a: 1 }, { a: 1, b: 2 });
 
-    different({ a:1, b:2, c:[] }, { a:1, b:2 });
-    different({ a:1, b:2 }, { a:1, b:2, c:[] });
-    different({ a:1, c:3 }, { a:1, b:2 });
+    different({ a: 1, b: 2, c: [] }, { a: 1, b: 2 });
+    different({ a: 1, b: 2 }, { a: 1, b: 2, c: [] });
+    different({ a: 1, c: 3 }, { a: 1, b: 2 });
 
-    same({ a:[{ b:1 }] }, { a:[{ b:1 }] });
-    different({ a:[{ b:2 }] }, { a:[{ b:1 }] });
-    different({ a:[{ c:1 }] }, { a:[{ b:1 }] });
+    same({ a: [{ b: 1 }] }, { a: [{ b: 1 }] });
+    different({ a: [{ b: 2 }] }, { a: [{ b: 1 }] });
+    different({ a: [{ c: 1 }] }, { a: [{ b: 1 }] });
 
     different([], {});
     different({}, []);
     different({}, null);
     different({}, undefined);
 
-    different({ a:void 0 }, {});
-    different({}, { a:undefined });
-    different({ a:undefined }, { b:undefined });
+    different({ a: void 0 }, {});
+    different({}, { a: undefined });
+    different({ a: undefined }, { b: undefined });
+    same({
+      prop1: 'value1',
+      prop2: 'value2',
+      prop3: 'value3',
+      prop4: {
+        subProp1: 'sub value1',
+        subProp2: {
+          subSubProp1: 'sub sub value1',
+          subSubProp2: [1, 2, { prop2: 1, prop: 2 }, 4, 5]
+        }
+      },
+      prop5: 1000,
+      prop6: new Date(2016, 2, 10)
+    }, {
+      prop5: 1000,
+      prop3: 'value3',
+      prop1: 'value1',
+      prop2: 'value2',
+      prop6: new Date('2016/03/10'),
+      prop4: {
+        subProp2: {
+          subSubProp1: 'sub sub value1',
+          subSubProp2: [1, 2, { prop2: 1, prop: 2 }, 4, 5]
+        },
+        subProp1: 'sub value1'
+      }
+    });
   });
 
   it('dictionary', () => {
@@ -73,14 +101,14 @@ describe('Decomparefy', () => {
 
   it('Arrays', () => {
     same([], []);
-    same([1,2,3], [1,2,3]);
-    different([1,2,4], [1,2,3]);
-    different([1,2], [1,2,3]);
+    same([1, 2, 3], [1, 2, 3]);
+    different([1, 2, 4], [1, 2, 3]);
+    different([1, 2], [1, 2, 3]);
 
-    same([{ a:1 }, { b:2 }], [{ a:1 }, { b:2 }]);
-    different([{ a:2 }, { b:2 }], [{ a:1 }, { b:2 }]);
+    same([{ a: 1 }, { b: 2 }], [{ a: 1 }, { b: 2 }]);
+    different([{ a: 2 }, { b: 2 }], [{ a: 1 }, { b: 2 }]);
 
-    different({ '0':0, '1':1, length:2 }, [0, 1]);
+    different({ '0': 0, '1': 1, length: 2 }, [0, 1]);
   });
 
   it('Dates', () => {
@@ -129,7 +157,8 @@ describe('Decomparefy', () => {
 
     same(foo, foo);
     same(foo, bar);
-    same(foo, () => {});
+    same(foo, () => {
+    });
   });
 
   it('Map flat', () => {
@@ -152,7 +181,7 @@ describe('Decomparefy', () => {
   it('Map nested', () => {
     const hello = new Map([
       ['foo', { a: 1 }],
-      ['bar', [1, 2, 3]],
+      ['bar', [1, 2, 3]]
     ]);
 
     const world = new Map([
@@ -180,11 +209,11 @@ describe('Decomparefy', () => {
 
   it('Map keys :: complex', () => {
     const hello = new Map([
-      [{ foo:1 }, { a:1 }]
+      [{ foo: 1 }, { a: 1 }]
     ]);
 
     const world = new Map([
-      [{ foo:1 }, { a:1 }]
+      [{ foo: 1 }, { a: 1 }]
     ]);
 
     same(hello, world);
@@ -264,80 +293,80 @@ describe('Decomparefy', () => {
   it('Buffer', () => {
     same(
       Buffer.from('hello'),
-      new Buffer('hello'),
+      new Buffer('hello')
     );
 
     different(
       Buffer.from('hello'),
-      Buffer.from('world'),
+      Buffer.from('world')
     );
 
     different(
       Buffer.from('hello', 'base64'),
-      Buffer.from('hello', 'utf8'),
+      Buffer.from('hello', 'utf8')
     );
   });
 
   it('Int16Array', () => {
     same(
       new Int16Array([42]),
-      new Int16Array([42]),
+      new Int16Array([42])
     );
 
     different(
       new Int16Array([1, 2, 3]),
-      new Int16Array([1, 2]),
+      new Int16Array([1, 2])
     );
 
     different(
       new Int16Array([1, 2, 3]),
-      new Int16Array([4, 5, 6]),
+      new Int16Array([4, 5, 6])
     );
 
     different(
       new Int16Array([1, 2, 3]),
-      new Uint16Array([1, 2, 3]),
+      new Uint16Array([1, 2, 3])
     );
 
     different(
       new Int16Array([1, 2, 3]),
-      new Int8Array([1, 2, 3]),
+      new Int8Array([1, 2, 3])
     );
   });
 
   it('Int32Array', () => {
     same(
       new Int32Array(new ArrayBuffer(4)),
-      new Int32Array(new ArrayBuffer(4)),
+      new Int32Array(new ArrayBuffer(4))
     );
 
     different(
       new Int32Array(8),
-      new Uint32Array(8),
+      new Uint32Array(8)
     );
 
     different(
       new Int32Array(new ArrayBuffer(8)),
-      new Int32Array(Array.from({ length: 8 })),
+      new Int32Array(Array.from({ length: 8 }))
     );
   });
 
   it('ArrayBuffer', () => {
     same(
       new ArrayBuffer(2),
-      new ArrayBuffer(2),
+      new ArrayBuffer(2)
     );
 
     different(
       new ArrayBuffer(1),
-      new ArrayBuffer(2),
+      new ArrayBuffer(2)
     );
   });
 
   it('DataView', () => {
     same(
       new DataView(new ArrayBuffer(4)),
-      new DataView(new ArrayBuffer(4)),
+      new DataView(new ArrayBuffer(4))
     );
 
     const hello = new Int8Array([1, 2, 3, 4, 5]);
@@ -354,7 +383,7 @@ describe('Decomparefy', () => {
     hello.fill(0);
 
     different(hello, world);
-    different(hello.buffer, world.buffer);
+    // different(hello.buffer, world.buffer);
 
     different(
       new DataView(hello.buffer),
