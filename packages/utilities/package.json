@@ -1,0 +1,10 @@
+{
+  "name": "decopyfy",
+  "version": "1.0.0",
+  "description": "deep copy data",
+  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@czaplej/utilities": "*"
+  }
+}

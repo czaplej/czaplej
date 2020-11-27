@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@czaplej/use-subject": ["packages/use-subject/src/index.ts"],
+      "@czaplej/use-ref-constant": ["packages/use-ref-constant/src/index.ts"],
+      "@czaplej/use-behavior-subject": [
+        "packages/use-behavior-subject/src/index.ts"
+      ],
+      "decopyfy": ["packages/decopyfy/src/index.ts"],
+      "decomparefy": ["packages/decomparefy/src/index.ts"],
+      "@czaplej/utilities": ["packages/utilities/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
