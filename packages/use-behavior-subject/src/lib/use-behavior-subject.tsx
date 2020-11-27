@@ -64,7 +64,7 @@ export const useBehaviorSubject = <T extends unknown>(props: UseBehaviorSubjectP
 
   const setState = useCallback((value: Partial<T> | T) => {
     comparePrevStateAndNewValue(subject, value);
-  }, []);
+  }, [subject]);
 
   return { state: clone(subject.value), setInitialState, setState };
 };
