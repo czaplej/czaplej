@@ -21,8 +21,6 @@
       "@czaplej/use-behavior-subject": [
         "packages/use-behavior-subject/src/index.ts"
       ],
-      "decopyfy": ["packages/decopyfy/src/index.ts"],
-      "decomparefy": ["packages/decomparefy/src/index.ts"],
       "@czaplej/utilities": ["packages/utilities/src/index.ts"]
     }
   },

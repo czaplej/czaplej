@@ -132,7 +132,7 @@
             "tsConfig": "packages/use-behavior-subject/tsconfig.lib.json",
             "project": "packages/use-behavior-subject/package.json",
             "entryFile": "packages/use-behavior-subject/src/index.ts",
-            "external": ["react", "react-dom"],
+            "external": ["react", "rxjs", "rxjs/operators", "decopyfy", "decomparefy"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [

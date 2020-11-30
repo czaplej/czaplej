@@ -1,4 +1,13 @@
 {
   "name": "@czaplej/use-behavior-subject",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "description": "state  management alternative",
+  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "rxjs": ">=6.5.4",
+    "decopyfy": "*",
+    "decomparefy": "*"
+  }
 }

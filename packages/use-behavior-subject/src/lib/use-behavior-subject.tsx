@@ -70,7 +70,6 @@ export const useBehaviorSubject = <T extends unknown>(props: UseBehaviorSubjectP
 };
 
 export const createSubject = <T extends unknown>(initialValue?: T): BehaviorSubject<T> => {
-  console.log('CREATE SUBJECT');
   return new BehaviorSubject<T>(initialValue);
 };
 

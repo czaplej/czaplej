@@ -5364,11 +5364,15 @@ decode-uri-component@^0.2.0:
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
-"decomparefy@file:./dist/packages/decomparefy":
-  version "1.0.0"
+decomparefy@*:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/decomparefy/-/decomparefy-1.0.2.tgz#201da1e3fde5093a2c71a77b2abed3bdba8954b4"
+  integrity sha512-iV4ldcEEykcxhcCKr+8zrPR5yeZ8QnDWkaK9IHMEqHyHH7u/S+WkpjX/13pu9DouWhvpKQQsob2dPrvtbk/24Q==
 
-"decopyfy@file:./dist/packages/decopyfy":
-  version "1.0.0"
+decopyfy@*:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/decopyfy/-/decopyfy-1.0.1.tgz#54ea1c106f58a9791f3381639e1ae2009329c8ee"
+  integrity sha512-++WAhkaR5xu18cVYx0DHRgRBs9hk45xJXqVISK4vD+bmcUYDLfbsHk0DwgSeSE8mpg1/YosoaZZp/LcacFLu8Q==
 
 deep-copy@^1.4.2:
   version "1.4.2"

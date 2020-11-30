@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment,@typescript-eslint/no-empty-function */
 import { isEqual } from './decomparefy';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 function same(a, b) {
   expect(isEqual(a, b)).toBeTruthy();
@@ -38,6 +39,36 @@ describe('Decomparefy', () => {
 
     same('a', 'a');
     different('a', 'b');
+  });
+
+  it('Rxjs', () => {
+    const a = new BehaviorSubject('asd');
+    const b = new BehaviorSubject('asd');
+    same(new Subject(), new Subject());
+    same(new BehaviorSubject(undefined), new BehaviorSubject(undefined));
+    different(new BehaviorSubject('test'), new BehaviorSubject(undefined));
+    same(new BehaviorSubject({ a: 1 }), new BehaviorSubject({ a: 1 }));
+    different(new BehaviorSubject({ a: 1 }), new BehaviorSubject({ a: 2 }));
+    same(() => {
+      a.next('aaa');
+    }, () => {
+      a.next('aaa');
+    });
+    different(() => {
+      a.next('aaa');
+    }, () => {
+      a.next('bbb');
+    });
+    different(() => {
+      a.next('aaa');
+    }, () => {
+      b.next('aaa');
+    });
+    different(() => {
+      a.next('aaa');
+    }, () => {
+      b.next('bbb');
+    });
   });
 
   it('Objects', () => {
