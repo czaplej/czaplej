@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
-import { createSubject, useBehaviorSubject } from 'use-behavior-subject';
+import { createSubject, useBehaviorSubject } from '@czaplej/use-behavior-subject';
 
 describe('useBehaviorSubject', () => {
   const behaviorSubject$ = createSubject({value: 123});
