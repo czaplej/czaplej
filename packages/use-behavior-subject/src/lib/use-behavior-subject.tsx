@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { skip } from 'rxjs/operators';
 import { clone } from 'decopyfy';
 
-function comparePrevStateAndNewValue<T extends unknown>(subject: BehaviorSubject<T>, newState: (Partial<T> | T), prevState: T = subject.getValue(), compareFn= isEqual) {
+function comparePrevStateAndNewValue<T extends unknown>(subject: BehaviorSubject<T>, newState: (Partial<T> | T), prevState: T = subject.getValue(), compareFn = isEqual) {
   if (typeof prevState !== 'object') {
     if (!compareFn(newState, prevState)) {
       subject.next(newState as T);
@@ -75,7 +75,7 @@ export const createSubject = <T extends unknown>(initialValue?: T): BehaviorSubj
 export const useBehaviorSubjectSelector = <TState, TSelected>(
   selector: (state: TState) => TSelected,
   subject?: BehaviorSubject<TState>,
-  compareFn= isEqual
+  compareFn = isEqual
 ): TSelected => {
   if (!subject) {
     throw new Error('useBehaviorSubjectSelector must have the subject Prop');
@@ -102,11 +102,13 @@ export const useBehaviorSubjectSelector = <TState, TSelected>(
 
 type UseBehaviorSubjectSetStateAction<S> = Partial<S> | ((prevState: S) => Partial<S>);
 
-export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorSubject<T>) => useCallback((callback: UseBehaviorSubjectSetStateAction<T>) => {
-  if (!subject) {
-    throw new Error('useBehaviorSubjectDispatch must have the subject Prop');
-  }
-  const prevState = (subject.getValue());
-  const newState = typeof callback === 'function' ? callback(clone(subject.getValue())) : callback;
-  comparePrevStateAndNewValue(subject, newState, prevState);
-}, [subject]);
+export const useBehaviorSubjectDispatch = <T extends unknown>(subject: BehaviorSubject<T>) => {
+  return useCallback((callback: UseBehaviorSubjectSetStateAction<T>) => {
+    if (!subject) {
+      throw new Error('useBehaviorSubjectDispatch must have the subject Prop');
+    }
+    const prevState = (subject.getValue());
+    const value = typeof callback === 'function' ? callback(clone(subject.getValue())) : callback;
+    comparePrevStateAndNewValue(subject, value, prevState);
+  }, [subject]);
+};
