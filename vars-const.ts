@@ -26,7 +26,7 @@ export const themes = {
       disabled: 'var(--colors-disabled)',
       textInfoBg: 'var(--colors-textInfoBg)',
       textInfoBorder: 'var(--colors-textInfoBorder)',
-      lineHeader: 'var(--colors-lineHeader)'
+      lineHeader: 'var(--colors-lineHeader)',
     },
     lightness: 'var(--lightness)',
     typography: {
@@ -45,29 +45,29 @@ export const themes = {
       fontWeightNormal: 'var(--typography-font-weight-normal)',
       fontWeightThin: 'var(--typography-font-weight-thin)',
       fontWeightBase: 'var(--typography-font-weight-base)',
-      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)'
+      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)',
     },
     spacing: {
       gutterVertical: 'var(--spacing-gutter-vertical)',
       gutterHorizontal: 'var(--spacing-gutter-horizontal)',
       headerSpacingSmall: 'var(--spacing-header-spacing-small)',
       headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
-      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)',
     },
     general: { borderRadius: 'var(--general-border-radius)' },
     sidebar: {
       bgColor: 'var(--sidebar-bg-color)',
       color: 'var(--sidebar-color)',
       width: 'var(--sidebar-width)',
-      widthClosed: 'var(--sidebar-widthClosed)'
+      widthClosed: 'var(--sidebar-widthClosed)',
     },
     topbar: {
       bgColor: 'var(--topbar-bg-color)',
       color: 'var(--topbar-color)',
-      height: 'var(--topbar-height)'
+      height: 'var(--topbar-height)',
     },
     linkHeader: { active: 'var(--linkHeader-active)' },
-    paperHeader: { color: 'var(--paperHeader-color)' }
+    paperHeader: { color: 'var(--paperHeader-color)' },
   },
   dark: {
     colors: {
@@ -96,7 +96,7 @@ export const themes = {
       disabled: 'var(--colors-disabled)',
       textInfoBg: 'var(--colors-textInfoBg)',
       textInfoBorder: 'var(--colors-textInfoBorder)',
-      lineHeader: 'var(--colors-lineHeader)'
+      lineHeader: 'var(--colors-lineHeader)',
     },
     lightness: 'var(--lightness)',
     typography: {
@@ -115,28 +115,28 @@ export const themes = {
       fontWeightNormal: 'var(--typography-font-weight-normal)',
       fontWeightThin: 'var(--typography-font-weight-thin)',
       fontWeightBase: 'var(--typography-font-weight-base)',
-      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)'
+      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)',
     },
     spacing: {
       gutterVertical: 'var(--spacing-gutter-vertical)',
       gutterHorizontal: 'var(--spacing-gutter-horizontal)',
       headerSpacingSmall: 'var(--spacing-header-spacing-small)',
       headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
-      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)',
     },
     general: { borderRadius: 'var(--general-border-radius)' },
     sidebar: {
       bgColor: 'var(--sidebar-bg-color)',
       color: 'var(--sidebar-color)',
       width: 'var(--sidebar-width)',
-      widthClosed: 'var(--sidebar-widthClosed)'
+      widthClosed: 'var(--sidebar-widthClosed)',
     },
     topbar: {
       bgColor: 'var(--topbar-bg-color)',
       color: 'var(--topbar-color)',
-      height: 'var(--topbar-height)'
+      height: 'var(--topbar-height)',
     },
     linkHeader: { active: 'var(--linkHeader-active)' },
-    paperHeader: { color: 'var(--paperHeader-color)' }
-  }
-}
+    paperHeader: { color: 'var(--paperHeader-color)' },
+  },
+};

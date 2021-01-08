@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-export function toRawType(value):string {
+export function toRawType(value): string {
   if (value === void 0) return 'Undefined';
   if (value === null) return 'Null';
 
@@ -35,17 +35,17 @@ export function toRawType(value):string {
 function cloneOtherType(target) {
   const constrFun = target.constructor;
   switch (toRawType(target)) {
-    case "Boolean":
-    case "Number":
-    case "String":
-    case "Error":
-    case "Date":
+    case 'Boolean':
+    case 'Number':
+    case 'String':
+    case 'Error':
+    case 'Date':
       return new constrFun(target);
-    case "RegExp":
+    case 'RegExp':
       return cloneReg(target);
-    case "Symbol":
+    case 'Symbol':
       return cloneSymbol(target);
-    case "Function":
+    case 'Function':
       return target;
     default:
       return null;
@@ -63,7 +63,10 @@ function cloneReg(target) {
   return result;
 }
 
-function forEach<T>(array: T[], iteratee: (val: T, index: number) => void): T[] {
+function forEach<T>(
+  array: T[],
+  iteratee: (val: T, index: number) => void
+): T[] {
   let index = array.length;
   while (index--) {
     iteratee(array[index], index);
@@ -72,16 +75,14 @@ function forEach<T>(array: T[], iteratee: (val: T, index: number) => void): T[] 
 }
 
 // core function
-export function clone<T extends unknown>(target: T, map = new WeakMap()):T {
-
+export function clone<T extends unknown>(target: T, map = new WeakMap()): T {
   // clone primitive types
-  if (typeof target !== "object" || target === null || target === undefined) {
+  if (typeof target !== 'object' || target === null || target === undefined) {
     return target;
   }
 
   const type = toRawType(target);
   let cloneTarget = null;
-
 
   // @ts-ignore
   if (map.get(target)) {
@@ -91,42 +92,47 @@ export function clone<T extends unknown>(target: T, map = new WeakMap()):T {
   // @ts-ignore
   map.set(target, cloneTarget);
 
-  if (type !== "Set" && type !== "Map" && type !== "Array" && type !== "Object") {
-    return cloneOtherType(target)
+  if (
+    type !== 'Set' &&
+    type !== 'Map' &&
+    type !== 'Array' &&
+    type !== 'Object'
+  ) {
+    return cloneOtherType(target);
   }
 
   // clone Set
-  if (type === "Set") {
+  if (type === 'Set') {
     cloneTarget = new Set();
-    (target as Set<T>).forEach(value => {
+    (target as Set<T>).forEach((value) => {
       cloneTarget.add(clone(value, map));
     });
     return cloneTarget;
   }
 
   // clone Map
-  if (type === "Map") {
+  if (type === 'Map') {
     cloneTarget = new Map();
-    (target as Map<T,T>).forEach((value, key) => {
+    (target as Map<T, T>).forEach((value, key) => {
       cloneTarget.set(key, clone(value, map));
     });
     return cloneTarget;
   }
 
   // clone Array
-  if (type === "Array") {
+  if (type === 'Array') {
     cloneTarget = [];
     forEach(target as T[], (value, index) => {
       cloneTarget[index] = clone(value, map);
-    })
+    });
   }
 
   // clone normal Object
-  if (type === "Object") {
+  if (type === 'Object') {
     cloneTarget = {};
     forEach(Object.keys(target), (key, index) => {
       cloneTarget[key] = clone(target[key], map);
-    })
+    });
   }
 
   return cloneTarget;

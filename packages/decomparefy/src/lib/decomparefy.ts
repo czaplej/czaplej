@@ -17,7 +17,7 @@ const decomparefy = (a, b): boolean => {
   if (typeA !== typeB) return false;
   else if (a !== a && b !== b) return true;
   else if (typeA === 'Null' || typeA === 'Undefined') return true;
-   else if (typeA === 'Date') return a.getTime() === b.getTime();
+  else if (typeA === 'Date') return a.getTime() === b.getTime();
   else if (typeA === 'RegExp') return a + '' === b + '';
   else if (typeA === 'Array') {
     if (a.length !== b.length) return false;
@@ -37,7 +37,10 @@ const decomparefy = (a, b): boolean => {
     let isSame = false;
     for (const key of keysA) {
       if (!keysB.includes(key)) return false;
-      if (toRawType(a[key]) === 'Function' || toRawType(b[key]) === 'Function') {
+      if (
+        toRawType(a[key]) === 'Function' ||
+        toRawType(b[key]) === 'Function'
+      ) {
         if (a[key] + '' !== b[key] + '') return false;
       } else {
         if (!decomparefy(a[key], b[key])) return false;
@@ -74,7 +77,13 @@ const decomparefy = (a, b): boolean => {
       }
     }
     return true;
-  } else if (typeA === 'Uint8Array' || typeA === 'Int16Array' || typeA === 'Int32Array' || typeA === 'ArrayBuffer' || typeA === 'Int8Array') {
+  } else if (
+    typeA === 'Uint8Array' ||
+    typeA === 'Int16Array' ||
+    typeA === 'Int32Array' ||
+    typeA === 'ArrayBuffer' ||
+    typeA === 'Int8Array'
+  ) {
     if (a.byteLength !== b.byteLength) return false;
     let index = a.byteLength;
     while (index--) {
@@ -93,15 +102,14 @@ const decomparefy = (a, b): boolean => {
   }
 
   // IsNaN
-  return (a !== a && b !== b);
-
+  return a !== a && b !== b;
 };
 
 export function isEqual(a, b): boolean {
   try {
     return decomparefy(a, b);
   } catch (error) {
-    if (((error.message || '').match(/stack|recursion/i))) {
+    if ((error.message || '').match(/stack|recursion/i)) {
       // warn on circular references, don't crash
       // browsers give this different errors name and messages:
       // chrome/safari: "RangeError", "Maximum call stack size exceeded"
@@ -113,5 +121,4 @@ export function isEqual(a, b): boolean {
     // some other error. we should definitely know about these
     throw error;
   }
-
 }

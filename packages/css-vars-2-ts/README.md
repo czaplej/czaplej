@@ -1,14 +1,15 @@
 # css-vars-2-ts
 
 ### Generate typescript interfaces and constants from .css/.scss/.sass
+
 This library was generated with [Nx](https://nx.dev).
 
 <!-- TOC -->
 
-  - [Installation](#Installation)
-  - [Usage](#Usage)
-  - [Options](#Options)
-  - [License](#license)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Options](#Options)
+- [License](#license)
 
 <!-- /TOC -->
 
@@ -17,14 +18,19 @@ This library was generated with [Nx](https://nx.dev).
 For the best CLI, we recommend installing `css-vars-2-ts` globally via `npm` or `yarn`:
 
 #### npm
+
 ```bash
 npm install -g css-vars-2-ts
 ``` 
+
 #### yarn
+
 ```bash
 yarn global add css-vars-2-ts
 ```
-or 
+
+or
+
 ```bash
 yarn add css-vars-2-ts -D
 ```
@@ -32,7 +38,9 @@ yarn add css-vars-2-ts -D
 ## Usage
 
 ### Input
+
 ```./vars.css```
+
 ```css
 body[data-theme="light"] {
   --colors-background: #fff;
@@ -106,13 +114,17 @@ body[data-theme="dark"] {
   --spacing-header-spacing-large: 2rem;
 }
 ```
+
 ### Command
+
 ```bash
 css-vars-2-ts vars.css
 ```
+
 ### Output
 
 ```./vars-const.ts```
+
 ```ts
 export const themes = {
   light: {
@@ -193,17 +205,21 @@ export const themes = {
   }
 }
 ```
+
 ```./vars-model.ts```
+
 ```ts
 export interface Themes {
   light: Light;
   dark: Light;
 }
+
 export interface Light {
   colors: Colors;
   lightness: string;
   spacing: Spacing;
 }
+
 export interface Spacing {
   gutterVertical: string;
   gutterHorizontal: string;
@@ -211,6 +227,7 @@ export interface Spacing {
   headerSpacingMedium: string;
   headerSpacingLarge: string;
 }
+
 export interface Colors {
   background: string;
   primary: string;
@@ -244,6 +261,7 @@ export interface Colors {
 ### Options
 
 #### target
+
 A directory where the generated files are placed.
 
 Type: ```string```
@@ -251,6 +269,7 @@ Type: ```string```
 Default: ```./```
 
 #### targetName
+
 A file name for constant.
 
 Type: ```string```
@@ -258,6 +277,7 @@ Type: ```string```
 Default: ```{css-file-name}-const.ts```
 
 #### targetModelName
+
 A file name for interfaces.
 
 Type: ```string```
@@ -265,12 +285,13 @@ Type: ```string```
 Default: ```{css-file-name}-model.ts```
 
 #### help
+
 Show all available args.
 
 Type: ```boolean```
 
 Default: ```false```
 
-
 ## License
+
 The package is Open Source Software released under the [MIT licensed](./LICENSE).

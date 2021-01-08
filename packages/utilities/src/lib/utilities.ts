@@ -1,4 +1,4 @@
-export function toRawType(value):string {
+export function toRawType(value): string {
   if (value === void 0) return 'Undefined';
   if (value === null) return 'Null';
 

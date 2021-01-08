@@ -19,8 +19,6 @@ export function checkTypeOf(val): string {
       return 'Function';
   }
 
-
-
   if (!isArray(val)) {
     if (isBuffer(val)) return 'ArrayBuffer';
     if (isDate(val)) return 'Date';
@@ -82,7 +80,12 @@ function isArray(val) {
 }
 
 function isError(val) {
-  return val instanceof Error || (typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number');
+  return (
+    val instanceof Error ||
+    (typeof val.message === 'string' &&
+      val.constructor &&
+      typeof val.constructor.stackTraceLimit === 'number')
+  );
 }
 
 function isDate(val) {
@@ -100,7 +103,7 @@ function isBuffer(val) {
   return false;
 }
 
-export function toRawType(value):string {
+export function toRawType(value): string {
   if (value === void 0) return 'Undefined';
   if (value === null) return 'Null';
 
@@ -132,4 +135,3 @@ export function toRawType(value):string {
 
   return type.slice(8, -1);
 }
-

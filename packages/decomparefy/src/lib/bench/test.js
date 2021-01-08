@@ -37,28 +37,30 @@ const { isEqual } = require('decomparefy');
 console.timeEnd('decomparefy');
 
 console.time('decomparefy-typeof');
-const {  isEqualCheckTypeof } = require('decomparefy');
+const { isEqualCheckTypeof } = require('decomparefy');
 console.timeEnd('decomparefy-typeof');
 
 console.time('react-fast-compare');
 const isReactCompare = require('react-fast-compare');
 console.timeEnd('react-fast-compare');
 
-const assert = (foo, bar, msg='') => deepStrictEqual(foo, bar, msg);
+const assert = (foo, bar, msg = '') => deepStrictEqual(foo, bar, msg);
 
 function runner(name, contenders) {
   const file = join(__dirname, 'fixtures', name + '.js');
-  const   fixture = require(file);
+  const fixture = require(file);
 
   console.log('\n(%s) Validation: ', name);
-  Object.keys(contenders).forEach(name => {
+  Object.keys(contenders).forEach((name) => {
     const func = contenders[name];
     const { foo, bar } = klona(fixture);
+
     function testVal(...args) {
       console.time(`${name}-${args[2]}`);
       assert(...args);
       console.timeEnd(`${name}-${args[2]}`);
     }
+
     try {
       // testVal(func(1, 1), true, 'equal numbers');
       // testVal(func(1, 2), false, 'not equal numbers');
@@ -66,8 +68,7 @@ function runner(name, contenders) {
       // testVal(func(0, null), false, 'number vs null');
       // testVal(func(0, undefined), false, 'number vs undefined');
       testVal(func(foo, bar), true, 'kitchen sink');
-    } catch (err) {
-    }
+    } catch (err) {}
   });
 }
 
@@ -79,8 +80,8 @@ runner('basic', {
   // 'nano-equal': nanoequal,
   // 'dequal/lite': lite.dequal,
   'decomparefy-typeof': isEqualCheckTypeof,
-  'decomparefy': isEqual,
-  'dequal': dequal,
+  decomparefy: isEqual,
+  dequal: dequal,
   'react-fast-compare': isReactCompare,
 });
 
@@ -90,6 +91,6 @@ runner('complex', {
   // 'util.isDeepStrictEqual': isDeepStrictEqual,
   'lodash.isEqual': lodash,
   'decomparefy-typeof': isEqualCheckTypeof,
-  'decomparefy': isEqual,
-  'dequal': dequal,
+  decomparefy: isEqual,
+  dequal: dequal,
 });

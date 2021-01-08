@@ -8,7 +8,7 @@ export const SignupForm = (props) => {
       lastName: '',
       email: '',
     },
-    onSubmit: values => {
+    onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
@@ -43,4 +43,3 @@ export const SignupForm = (props) => {
     </form>
   );
 };
-
