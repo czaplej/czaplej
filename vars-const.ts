@@ -1,0 +1,142 @@
+export const themes = {
+  light: {
+    colors: {
+      background: 'var(--colors-background)',
+      primary: 'var(--colors-primary)',
+      secondary: 'var(--colors-secondary)',
+      success: 'var(--colors-success)',
+      info: 'var(--colors-info)',
+      warning: 'var(--colors-warning)',
+      danger: 'var(--colors-danger)',
+      dark: 'var(--colors-dark)',
+      inverse: 'var(--colors-inverse)',
+      gray: 'var(--colors-gray)',
+      light: 'var(--colors-light)',
+      default: 'var(--colors-default)',
+      primaryLight: 'var(--colors-primary-light)',
+      successLight: 'var(--colors-success-light)',
+      infoLight: 'var(--colors-info-light)',
+      warningLight: 'var(--colors-warning-light)',
+      dangerLight: 'var(--colors-danger-light)',
+      bodyBg: 'var(--colors-body-bg)',
+      white: 'var(--colors-white)',
+      grayLight: 'var(--colors-gray-light)',
+      borderColor: 'var(--colors-border-color)',
+      greenLight: 'var(--colors-green-light)',
+      disabled: 'var(--colors-disabled)',
+      textInfoBg: 'var(--colors-textInfoBg)',
+      textInfoBorder: 'var(--colors-textInfoBorder)',
+      lineHeader: 'var(--colors-lineHeader)'
+    },
+    lightness: 'var(--lightness)',
+    typography: {
+      fontSizeInitial: 'var(--typography-font-size-initial)',
+      fontSizeBase: 'var(--typography-font-size-base)',
+      fontSizeLg: 'var(--typography-font-size-lg)',
+      fontSizeSm: 'var(--typography-font-size-sm)',
+      fontSizeLarger: 'var(--typography-font-size-larger)',
+      fontSizeMini: 'var(--typography-font-size-mini)',
+      fontSizeIndex: 'var(--typography-font-size-index)',
+      fontFamilyBase: 'var(--typography-font-family-base)',
+      linkColor: 'var(--typography-link-color)',
+      textColor: 'var(--typography-text-color)',
+      fontWeightBold: 'var(--typography-font-weight-bold)',
+      fontWeightSemiBold: 'var(--typography-font-weight-semi-bold)',
+      fontWeightNormal: 'var(--typography-font-weight-normal)',
+      fontWeightThin: 'var(--typography-font-weight-thin)',
+      fontWeightBase: 'var(--typography-font-weight-base)',
+      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)'
+    },
+    spacing: {
+      gutterVertical: 'var(--spacing-gutter-vertical)',
+      gutterHorizontal: 'var(--spacing-gutter-horizontal)',
+      headerSpacingSmall: 'var(--spacing-header-spacing-small)',
+      headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
+    },
+    general: { borderRadius: 'var(--general-border-radius)' },
+    sidebar: {
+      bgColor: 'var(--sidebar-bg-color)',
+      color: 'var(--sidebar-color)',
+      width: 'var(--sidebar-width)',
+      widthClosed: 'var(--sidebar-widthClosed)'
+    },
+    topbar: {
+      bgColor: 'var(--topbar-bg-color)',
+      color: 'var(--topbar-color)',
+      height: 'var(--topbar-height)'
+    },
+    linkHeader: { active: 'var(--linkHeader-active)' },
+    paperHeader: { color: 'var(--paperHeader-color)' }
+  },
+  dark: {
+    colors: {
+      background: 'var(--colors-background)',
+      primary: 'var(--colors-primary)',
+      secondary: 'var(--colors-secondary)',
+      success: 'var(--colors-success)',
+      info: 'var(--colors-info)',
+      warning: 'var(--colors-warning)',
+      danger: 'var(--colors-danger)',
+      dark: 'var(--colors-dark)',
+      inverse: 'var(--colors-inverse)',
+      gray: 'var(--colors-gray)',
+      light: 'var(--colors-light)',
+      default: 'var(--colors-default)',
+      primaryLight: 'var(--colors-primary-light)',
+      successLight: 'var(--colors-success-light)',
+      infoLight: 'var(--colors-info-light)',
+      warningLight: 'var(--colors-warning-light)',
+      dangerLight: 'var(--colors-danger-light)',
+      bodyBg: 'var(--colors-body-bg)',
+      white: 'var(--colors-white)',
+      grayLight: 'var(--colors-gray-light)',
+      borderColor: 'var(--colors-border-color)',
+      greenLight: 'var(--colors-green-light)',
+      disabled: 'var(--colors-disabled)',
+      textInfoBg: 'var(--colors-textInfoBg)',
+      textInfoBorder: 'var(--colors-textInfoBorder)',
+      lineHeader: 'var(--colors-lineHeader)'
+    },
+    lightness: 'var(--lightness)',
+    typography: {
+      fontSizeInitial: 'var(--typography-font-size-initial)',
+      fontSizeBase: 'var(--typography-font-size-base)',
+      fontSizeLg: 'var(--typography-font-size-lg)',
+      fontSizeSm: 'var(--typography-font-size-sm)',
+      fontSizeLarger: 'var(--typography-font-size-larger)',
+      fontSizeMini: 'var(--typography-font-size-mini)',
+      fontSizeIndex: 'var(--typography-font-size-index)',
+      fontFamilyBase: 'var(--typography-font-family-base)',
+      linkColor: 'var(--typography-link-color)',
+      textColor: 'var(--typography-text-color)',
+      fontWeightBold: 'var(--typography-font-weight-bold)',
+      fontWeightSemiBold: 'var(--typography-font-weight-semi-bold)',
+      fontWeightNormal: 'var(--typography-font-weight-normal)',
+      fontWeightThin: 'var(--typography-font-weight-thin)',
+      fontWeightBase: 'var(--typography-font-weight-base)',
+      fontSizeHeaderPopup: 'var(--typography-font-size-header-popup)'
+    },
+    spacing: {
+      gutterVertical: 'var(--spacing-gutter-vertical)',
+      gutterHorizontal: 'var(--spacing-gutter-horizontal)',
+      headerSpacingSmall: 'var(--spacing-header-spacing-small)',
+      headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
+    },
+    general: { borderRadius: 'var(--general-border-radius)' },
+    sidebar: {
+      bgColor: 'var(--sidebar-bg-color)',
+      color: 'var(--sidebar-color)',
+      width: 'var(--sidebar-width)',
+      widthClosed: 'var(--sidebar-widthClosed)'
+    },
+    topbar: {
+      bgColor: 'var(--topbar-bg-color)',
+      color: 'var(--topbar-color)',
+      height: 'var(--topbar-height)'
+    },
+    linkHeader: { active: 'var(--linkHeader-active)' },
+    paperHeader: { color: 'var(--paperHeader-color)' }
+  }
+}

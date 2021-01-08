@@ -21,7 +21,8 @@
       "@czaplej/use-behavior-subject": [
         "packages/use-behavior-subject/src/index.ts"
       ],
-      "@czaplej/utilities": ["packages/utilities/src/index.ts"]
+      "@czaplej/utilities": ["packages/utilities/src/index.ts"],
+      "css-vars-2-ts": ["packages/css-vars-2-ts/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

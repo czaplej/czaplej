@@ -1,0 +1,71 @@
+body[data-theme="light"] {
+  --colors-background: #fff;
+  --colors-primary: #17a2b8;
+  --colors-secondary: #798892;
+  --colors-success: #43a047;
+  --colors-info: #846eab;
+  --colors-warning: #ffc247;
+  --colors-danger: #f55d5d;
+  --colors-dark: #3c484f;
+  --colors-inverse: #495057;
+  --colors-gray: #d6dee5;
+  --colors-light: #f8f9fa;
+  --colors-default: #e9ecef;
+  --colors-primary-light: #dee4ee;
+  --colors-success-light: #ecfaec;
+  --colors-info-light: #f2fafa;
+  --colors-warning-light: #fdf7e6;
+  --colors-danger-light: #fff2ef;
+  --colors-body-bg: #f8f9fa;
+  --colors-white: #fff;
+  --colors-gray-light: #f8f9fa;
+  --colors-border-color: #c4c4c4;
+  --colors-green-light: #00c853;
+  --colors-disabled: #f3f3f3;
+  --colors-textInfoBg: #f8cbd0;
+  --colors-textInfoBorder: #a6a1a4;
+  --colors-lineHeader: #7d7d7d;
+  --lightness: 0.8;
+
+  --spacing-gutter-vertical: 2.4rem;
+  --spacing-gutter-horizontal: 2.4rem;
+  --spacing-header-spacing-small: 0.5rem;
+  --spacing-header-spacing-medium: 1rem;
+  --spacing-header-spacing-large: 2rem;
+}
+
+body[data-theme="dark"] {
+  --colors-background: #fff;
+  --colors-primary: #17a2b8;
+  --colors-secondary: #798892;
+  --colors-success: #43a047;
+  --colors-info: #846eab;
+  --colors-warning: #ffc247;
+  --colors-danger: #f55d5d;
+  --colors-dark: #3c484f;
+  --colors-inverse: #495057;
+  --colors-gray: #d6dee5;
+  --colors-light: #f8f9fa;
+  --colors-default: #e9ecef;
+  --colors-primary-light: #dee4ee;
+  --colors-success-light: #ecfaec;
+  --colors-info-light: #f2fafa;
+  --colors-warning-light: #fdf7e6;
+  --colors-danger-light: #fff2ef;
+  --colors-body-bg: #f8f9fa;
+  --colors-white: #fff;
+  --colors-gray-light: #f8f9fa;
+  --colors-border-color: #c4c4c4;
+  --colors-green-light: #00c853;
+  --colors-disabled: #f3f3f3;
+  --colors-textInfoBg: #f8cbd0;
+  --colors-textInfoBorder: #a6a1a4;
+  --colors-lineHeader: #7d7d7d;
+  --lightness: 0.2;
+
+  --spacing-gutter-vertical: 2.4rem;
+  --spacing-gutter-horizontal: 2.4rem;
+  --spacing-header-spacing-small: 0.5rem;
+  --spacing-header-spacing-medium: 1rem;
+  --spacing-header-spacing-large: 2rem;
+}

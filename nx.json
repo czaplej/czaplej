@@ -47,6 +47,9 @@
     },
     "utilities": {
       "tags": []
+    },
+    "css-vars-2-ts": {
+      "tags": []
     }
   },
   "workspaceLayout": {

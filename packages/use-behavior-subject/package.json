@@ -9,5 +9,12 @@
     "rxjs": ">=6.5.4",
     "decopyfy": "*",
     "decomparefy": "*"
-  }
+  },
+  "keywords": [
+    "observable",
+    "rxjs",
+    "subject",
+    "hooks",
+    "react"
+  ]
 }
