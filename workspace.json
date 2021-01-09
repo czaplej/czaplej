@@ -30,11 +30,7 @@
             "tsConfig": "packages/use-subject/tsconfig.lib.json",
             "project": "packages/use-subject/package.json",
             "entryFile": "packages/use-subject/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "@czaplej/use-ref-constant"
-            ],
+            "external": ["react", "react-dom", "@czaplej/use-ref-constant"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -46,9 +42,7 @@
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -56,9 +50,7 @@
             "jestConfig": "packages/use-subject/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/use-subject"
-          ]
+          "outputs": ["coverage/packages/use-subject"]
         }
       }
     },
@@ -91,10 +83,7 @@
             "tsConfig": "packages/use-ref-constant/tsconfig.lib.json",
             "project": "packages/use-ref-constant/package.json",
             "entryFile": "packages/use-ref-constant/src/index.ts",
-            "external": [
-              "react",
-              "react-dom"
-            ],
+            "external": ["react", "react-dom"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -106,9 +95,7 @@
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -116,9 +103,7 @@
             "jestConfig": "packages/use-ref-constant/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/use-ref-constant"
-          ]
+          "outputs": ["coverage/packages/use-ref-constant"]
         }
       }
     },
@@ -169,9 +154,7 @@
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -179,9 +162,7 @@
             "jestConfig": "packages/use-behavior-subject/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/use-behavior-subject"
-          ]
+          "outputs": ["coverage/packages/use-behavior-subject"]
         }
       }
     },
@@ -231,9 +212,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/web:dev-server",
@@ -268,9 +247,7 @@
             "jestConfig": "packages/formik-demo/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/formik-demo"
-          ]
+          "outputs": ["coverage/packages/formik-demo"]
         }
       }
     },
@@ -312,9 +289,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/decopyfy/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["packages/decopyfy/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "build": {
@@ -324,12 +299,7 @@
             "tsConfig": "packages/decopyfy/tsconfig.lib.json",
             "project": "packages/decopyfy/package.json",
             "entryFile": "packages/decopyfy/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is",
-              "styled-components"
-            ],
+            "external": ["react", "react-dom", "react-is", "styled-components"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -340,9 +310,7 @@
               }
             ]
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -350,9 +318,7 @@
             "jestConfig": "packages/decopyfy/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/decopyfy"
-          ]
+          "outputs": ["coverage/packages/decopyfy"]
         }
       }
     },
@@ -365,9 +331,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/decomparefy/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["packages/decomparefy/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "build": {
@@ -377,12 +341,7 @@
             "tsConfig": "packages/decomparefy/tsconfig.lib.json",
             "project": "packages/decomparefy/package.json",
             "entryFile": "packages/decomparefy/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is",
-              "styled-components"
-            ],
+            "external": ["react", "react-dom", "react-is", "styled-components"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -393,9 +352,7 @@
               }
             ]
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -403,9 +360,7 @@
             "jestConfig": "packages/decomparefy/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/decomparefy"
-          ]
+          "outputs": ["coverage/packages/decomparefy"]
         }
       }
     },
@@ -418,9 +373,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/utilities/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["packages/utilities/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "build": {
@@ -430,12 +383,7 @@
             "tsConfig": "packages/utilities/tsconfig.lib.json",
             "project": "packages/utilities/package.json",
             "entryFile": "packages/utilities/src/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is",
-              "styled-components"
-            ],
+            "external": ["react", "react-dom", "react-is", "styled-components"],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
             "assets": [
@@ -446,9 +394,7 @@
               }
             ]
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "test": {
           "builder": "@nrwl/jest:jest",
@@ -456,9 +402,7 @@
             "jestConfig": "packages/utilities/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/utilities"
-          ]
+          "outputs": ["coverage/packages/utilities"]
         }
       }
     },
@@ -471,9 +415,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/css-vars-2-ts/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["packages/css-vars-2-ts/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "build-base": {
@@ -483,52 +425,32 @@
             "tsConfig": "packages/css-vars-2-ts/tsconfig.lib.json",
             "packageJson": "packages/css-vars-2-ts/package.json",
             "main": "packages/css-vars-2-ts/index.ts",
-            "external": [
-              "react",
-              "react-dom",
-              "react-is"
-            ],
             "babelConfig": "@nrwl/react/plugins/bundle-babel",
             "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "configurations": {
+              "production": {
+                "optimization": true
+              }
+            },
             "assets": [
               {
+                "glob": "README.md",
                 "input": "packages/css-vars-2-ts",
-                "glob": "**/files/**",
                 "output": "/"
               },
               {
+                "glob": "LICENSE.md",
                 "input": "packages/css-vars-2-ts",
-                "glob": "**/files/**/.gitkeep",
-                "output": "/"
-              },
-              {
-                "input": "packages/css-vars-2-ts",
-                "glob": "**/*.json",
-                "output": "/"
-              },
-              {
-                "input": "packages/css-vars-2-ts",
-                "glob": "**/*.{js,ts}",
-                "output": "/"
-              },
-              {
-                "input": "packages/css-vars-2-ts",
-                "glob": "**/*.d.ts",
                 "output": "/"
               }
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "build": {
           "builder": "@nrwl/workspace:run-commands",
-          "outputs": [
-            "dist/packages/css-vars-2-ts"
-          ],
+          "outputs": ["dist/packages/css-vars-2-ts"],
           "options": {
             "commands": [
               {
@@ -547,9 +469,7 @@
             "jestConfig": "packages/css-vars-2-ts/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/css-vars-2-ts"
-          ]
+          "outputs": ["coverage/packages/css-vars-2-ts"]
         }
       }
     }

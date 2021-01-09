@@ -21,7 +21,7 @@ For the best CLI, we recommend installing `css-vars-2-ts` globally via `npm` or 
 
 ```bash
 npm install -g css-vars-2-ts
-``` 
+```
 
 #### yarn
 
@@ -39,10 +39,10 @@ yarn add css-vars-2-ts -D
 
 ### Input
 
-```./vars.css```
+`./vars.css`
 
 ```css
-body[data-theme="light"] {
+body[data-theme='light'] {
   --colors-background: #fff;
   --colors-primary: #17a2b8;
   --colors-secondary: #798892;
@@ -78,7 +78,7 @@ body[data-theme="light"] {
   --spacing-header-spacing-large: 2rem;
 }
 
-body[data-theme="dark"] {
+body[data-theme='dark'] {
   --colors-background: #fff;
   --colors-primary: #17a2b8;
   --colors-secondary: #798892;
@@ -123,7 +123,7 @@ css-vars-2-ts vars.css
 
 ### Output
 
-```./vars-const.ts```
+`./vars-const.ts`
 
 ```ts
 export const themes = {
@@ -154,7 +154,7 @@ export const themes = {
       disabled: 'var(--colors-disabled)',
       textInfoBg: 'var(--colors-textInfoBg)',
       textInfoBorder: 'var(--colors-textInfoBorder)',
-      lineHeader: 'var(--colors-lineHeader)'
+      lineHeader: 'var(--colors-lineHeader)',
     },
     lightness: 'var(--lightness)',
     spacing: {
@@ -162,8 +162,8 @@ export const themes = {
       gutterHorizontal: 'var(--spacing-gutter-horizontal)',
       headerSpacingSmall: 'var(--spacing-header-spacing-small)',
       headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
-      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
-    }
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)',
+    },
   },
   dark: {
     colors: {
@@ -192,7 +192,7 @@ export const themes = {
       disabled: 'var(--colors-disabled)',
       textInfoBg: 'var(--colors-textInfoBg)',
       textInfoBorder: 'var(--colors-textInfoBorder)',
-      lineHeader: 'var(--colors-lineHeader)'
+      lineHeader: 'var(--colors-lineHeader)',
     },
     lightness: 'var(--lightness)',
     spacing: {
@@ -200,13 +200,13 @@ export const themes = {
       gutterHorizontal: 'var(--spacing-gutter-horizontal)',
       headerSpacingSmall: 'var(--spacing-header-spacing-small)',
       headerSpacingMedium: 'var(--spacing-header-spacing-medium)',
-      headerSpacingLarge: 'var(--spacing-header-spacing-large)'
-    }
-  }
-}
+      headerSpacingLarge: 'var(--spacing-header-spacing-large)',
+    },
+  },
+};
 ```
 
-```./vars-model.ts```
+`./vars-model.ts`
 
 ```ts
 export interface Themes {
@@ -264,33 +264,33 @@ export interface Colors {
 
 A directory where the generated files are placed.
 
-Type: ```string```
+Type: `string`
 
-Default: ```./```
+Default: `./`
 
 #### targetName
 
 A file name for constant.
 
-Type: ```string```
+Type: `string`
 
-Default: ```{css-file-name}-const.ts```
+Default: `{css-file-name}-const.ts`
 
 #### targetModelName
 
 A file name for interfaces.
 
-Type: ```string```
+Type: `string`
 
-Default: ```{css-file-name}-model.ts```
+Default: `{css-file-name}-model.ts`
 
 #### help
 
 Show all available args.
 
-Type: ```boolean```
+Type: `boolean`
 
-Default: ```false```
+Default: `false`
 
 ## License
 

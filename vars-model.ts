@@ -2,7 +2,6 @@ export interface Themes {
   light: Light;
   dark: Light;
 }
-
 export interface Light {
   colors: Colors;
   lightness: string;
@@ -14,32 +13,26 @@ export interface Light {
   linkHeader: LinkHeader;
   paperHeader: PaperHeader;
 }
-
 export interface PaperHeader {
   color: string;
 }
-
 export interface LinkHeader {
   active: string;
 }
-
 export interface Topbar {
   bgColor: string;
   color: string;
   height: string;
 }
-
 export interface Sidebar {
   bgColor: string;
   color: string;
   width: string;
   widthClosed: string;
 }
-
 export interface General {
   borderRadius: string;
 }
-
 export interface Spacing {
   gutterVertical: string;
   gutterHorizontal: string;
@@ -47,7 +40,6 @@ export interface Spacing {
   headerSpacingMedium: string;
   headerSpacingLarge: string;
 }
-
 export interface Typography {
   fontSizeInitial: string;
   fontSizeBase: string;
@@ -66,7 +58,6 @@ export interface Typography {
   fontWeightBase: string;
   fontSizeHeaderPopup: string;
 }
-
 export interface Colors {
   background: string;
   primary: string;
