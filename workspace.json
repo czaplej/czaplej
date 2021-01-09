@@ -89,8 +89,8 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": ".",
-                "output": "."
+                "input": "packages/use-ref-constant",
+                "output": "/"
               }
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
@@ -148,8 +148,8 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": ".",
-                "output": "."
+                "input": "/packages/use-behavior-subject",
+                "output": "/"
               }
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
@@ -305,8 +305,8 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": ".",
-                "output": "."
+                "input": "/packages/decopyfy",
+                "output": "/"
               }
             ]
           },
@@ -347,8 +347,8 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": ".",
-                "output": "."
+                "input": "packages/decomparefy",
+                "output": "/"
               }
             ]
           },

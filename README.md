@@ -19,4 +19,10 @@ Below are my core plugins:
 - [@czaplej/use-behavior-subject](./packages/use-behavior-subject)
   - `npm install --save @czaplej/use-behavior-subject` or `yarn add @czaplej/use-behavior-subject`
 
+- [@czaplej/use-subject](./packages/use-subject)
+  - `npm install --save @czaplej/use-subject` or `yarn add @czaplej/use-subject`
+
+- [@czaplej/use-ref-constant](./packages/use-ref-constant)
+  - `npm install --save @czaplej/use-ref-constant` or `yarn add @czaplej/use-ref-constant`
+
 This project was generated using [Nx](https://nx.dev).

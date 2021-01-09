@@ -6,11 +6,11 @@ describe('useRefConstant', () => {
     const { result, rerender } = renderHook(() =>
       useRefConstant(() => ({ date: Date.now() }))
     );
-    const firestResult = result.current;
-    const firstDate = firestResult.date;
+    const firstResult = result.current;
+    const firstDate = firstResult.date;
     expect(typeof firstDate).toBe('number');
     rerender();
-    expect(result.current).toBe(firestResult);
+    expect(result.current).toBe(firstResult);
     expect(result.current.date).toBe(firstDate);
   });
 });

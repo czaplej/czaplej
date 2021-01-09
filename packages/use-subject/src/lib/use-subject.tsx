@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import isEqual from 'react-fast-compare';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { useRefConstant } from '@czaplej/use-ref-constant';
+import { isEqual } from 'decomparefy';
 
 type UseSubjectProps<T extends unknown> = {
   initialState?: T;
@@ -16,15 +16,10 @@ export const useSubject = <T extends unknown>(props: UseSubjectProps<T>) => {
   useEffect(() => {
     const subscription = observable$.subscribe({
       next: (value) => {
-        console.log('SUBJECT NEXT');
         setState(value);
-      },
-      complete: () => {
-        console.log('SUBJECT COMPLETED');
       },
     });
     return () => {
-      console.log('UNSUBSCRIBE SUBJECT');
       subscription.unsubscribe();
     };
   }, [observable$]);
@@ -32,19 +27,35 @@ export const useSubject = <T extends unknown>(props: UseSubjectProps<T>) => {
     setInitialState: () => subject$.next(initialState),
     setState: (value: Partial<T> | T) => {
       const prevState = subject$.getValue();
-      if (typeof prevState === 'object') {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-        // @ts-ignore
-        const newState = { ...prevState, ...value };
-        if (!isEqual(newState, state)) {
-          subject$.next(newState);
-        }
-      } else {
-        if (!isEqual(value, state)) {
-          subject$.next(value as T);
-        }
-      }
+      comparePrevStateAndNewValue(subject$, value, prevState);
     },
   };
   return { state, service$, setState: service$.setState };
 };
+
+function comparePrevStateAndNewValue<T extends unknown>(
+  subject: BehaviorSubject<T>,
+  newState: Partial<T> | T,
+  prevState: T = subject.getValue(),
+  compareFn = isEqual
+) {
+  if (typeof prevState !== 'object') {
+    if (!compareFn(newState, prevState)) {
+      subject.next(newState as T);
+    }
+  } else {
+    let newStateUpdate;
+    if (Array.isArray(prevState)) {
+      newStateUpdate = [...prevState, ...(newState as T[])];
+      if (!compareFn(newStateUpdate, prevState)) {
+        subject.next(newStateUpdate as T);
+      }
+    } else {
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      newStateUpdate = { ...(prevState as object), ...(newState as object) };
+      if (!compareFn(newStateUpdate, prevState)) {
+        subject.next(newStateUpdate as T);
+      }
+    }
+  }
+}

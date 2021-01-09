@@ -5,8 +5,6 @@
 
 ### Generate typescript interfaces and constants from .css/.scss/.sass
 
-This library was generated with [Nx](https://nx.dev).
-
 <!-- TOC -->
 
 - [Installation](#installation)
@@ -298,3 +296,6 @@ Default: `false`
 ## License
 
 The package is Open Source Software released under the [MIT licensed](LICENSE.md).
+
+
+This library was generated with [Nx](https://nx.dev).

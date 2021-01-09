@@ -4,11 +4,13 @@
   "description": "state  management alternative",
   "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "rxjs": "^6.5.4",
+    "decopyfy": "^1.0.1",
+    "decomparefy": "^1.0.2"
+  },
   "peerDependencies": {
-    "react": "*",
-    "rxjs": ">=6.5.4",
-    "decopyfy": "*",
-    "decomparefy": "*"
+    "react": ">=16.8.0"
   },
   "keywords": [
     "observable",
