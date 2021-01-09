@@ -6,9 +6,9 @@ This library was generated with [Nx](https://nx.dev).
 
 <!-- TOC -->
 
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Options](#Options)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Options](#options)
 - [License](#license)
 
 <!-- /TOC -->
