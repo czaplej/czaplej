@@ -8,6 +8,7 @@
     "url": "https://github.com/czaplej/czaplej.git",
     "directory": "packages/css-vars-2-ts"
   },
+  "homepage": "https://github.com/czaplej/czaplej/tree/master/packages/css-vars-2-ts",
   "license": "MIT",
   "bin": {
     "css-vars-2-ts": "./bin/css-vars-2-ts.js"
