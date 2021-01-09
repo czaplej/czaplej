@@ -294,4 +294,4 @@ Default: `false`
 
 ## License
 
-The package is Open Source Software released under the [MIT licensed](./LICENSE).
+The package is Open Source Software released under the [MIT licensed](./LICENSE.md).
