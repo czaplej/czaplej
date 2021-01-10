@@ -10,10 +10,10 @@ Remember the initial value of function
 ```tsx
 const App = (props) => {
   // always return the initial props
-  const initialValue = useRefConstant(() => (props))
+  const initialValue = useRefConstant(() => props);
 
-  return <>...</>
-}
+  return <>...</>;
+};
 ```
 
 This library was generated with [Nx](https://nx.dev).

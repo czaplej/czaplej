@@ -17,9 +17,11 @@ Below are my core plugins:
   - `npm install --save decomparefy` or `yarn add decomparefy`
 
 - [@czaplej/use-behavior-subject](./packages/use-behavior-subject)
+
   - `npm install --save @czaplej/use-behavior-subject` or `yarn add @czaplej/use-behavior-subject`
 
 - [@czaplej/use-subject](./packages/use-subject)
+
   - `npm install --save @czaplej/use-subject` or `yarn add @czaplej/use-subject`
 
 - [@czaplej/use-ref-constant](./packages/use-ref-constant)

@@ -297,5 +297,4 @@ Default: `false`
 
 The package is Open Source Software released under the [MIT licensed](LICENSE.md).
 
-
 This library was generated with [Nx](https://nx.dev).
