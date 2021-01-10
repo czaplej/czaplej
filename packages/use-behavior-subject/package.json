@@ -1,8 +1,14 @@
 {
   "name": "@czaplej/use-behavior-subject",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "state  management alternative",
-  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
+  "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/czaplej/czaplej.git",
+    "directory": "packages/use-behavior-subject"
+  },
+  "homepage": "https://github.com/czaplej/czaplej/tree/master/packages/use-behavior-subject",
   "license": "MIT",
   "dependencies": {
     "rxjs": "^6.5.4",

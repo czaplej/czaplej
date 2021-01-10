@@ -148,7 +148,7 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": "/packages/use-behavior-subject",
+                "input": "packages/use-behavior-subject",
                 "output": "/"
               }
             ],
