@@ -10,6 +10,9 @@ It's alternative react state management uses
 
 Coming soon..
 
+
+## Demo
+https://codesandbox.io/s/distracted-water-e9b1p
 ## Usage
 
 `App.tsx`
@@ -33,5 +36,7 @@ const App = (props) => {
   return <>...</>;
 };
 ```
+rest coming soon...
+check the demo at this moment
 
 This library was generated with [Nx](https://nx.dev).
