@@ -95,12 +95,12 @@ function runner(name, contenders) {
 }
 
 runner('basic', {
-  // 'assert.deepStrictEqual': naiive,
-  // 'util.isDeepStrictEqual': isDeepStrictEqual,
-  // 'fast-deep-equal': fastdeep,
-  // 'lodash.isEqual': lodash,
-  // 'nano-equal': nanoequal,
-  // 'dequal/lite': lite.dequal,
+  'assert.deepStrictEqual': naiive,
+  'util.isDeepStrictEqual': isDeepStrictEqual,
+  'fast-deep-equal': fastdeep,
+  'lodash.isEqual': lodash,
+  'nano-equal': nanoequal,
+  'dequal/lite': lite.dequal,
   'decomparefy-typeof': isEqualCheckTypeof,
   decomparefy: isEqual,
   dequal: dequal,
@@ -109,9 +109,9 @@ runner('basic', {
 
 // Only keep those that pass
 runner('complex', {
-  // 'assert.deepStrictEqual': naiive,
-  // 'util.isDeepStrictEqual': isDeepStrictEqual,
-  // 'lodash.isEqual': lodash,
+  'assert.deepStrictEqual': naiive,
+  'util.isDeepStrictEqual': isDeepStrictEqual,
+  'lodash.isEqual': lodash,
   'decomparefy-typeof': isEqualCheckTypeof,
   decomparefy: isEqual,
   dequal: dequal,

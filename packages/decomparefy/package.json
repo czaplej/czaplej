@@ -2,6 +2,19 @@
   "name": "decomparefy",
   "version": "1.0.0",
   "description": "Deep data comparisons",
-  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
-  "license": "MIT"
+  "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/czaplej/czaplej.git",
+    "directory": "packages/decomparefy"
+  },
+  "homepage": "https://github.com/czaplej/czaplej/tree/master/packages/decomparefy",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "deep-compare",
+    "compare",
+    "equality",
+    "equal"
+  ]
 }

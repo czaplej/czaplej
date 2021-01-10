@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/czaplej/decopyfy/blob/master/LICENSE.md)
 [![npm latest package](https://img.shields.io/npm/v/decopyfy/latest.svg)](https://www.npmjs.com/package/decopyfy)
 
-Remember the initial value of function
+Deep clone objects.
 
 ## Installation
 
