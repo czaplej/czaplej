@@ -10,9 +10,10 @@ It's alternative react state management uses
 
 Coming soon...
 
-
 ## Demo
+
 https://codesandbox.io/s/distracted-water-e9b1p
+
 ## Usage
 
 `App.tsx`
@@ -20,12 +21,12 @@ https://codesandbox.io/s/distracted-water-e9b1p
 ```tsx
 import {
   useBehaviorSubjectDispatch,
-  useBehaviorSubjectSelector
-} from "@czaplej/use-behavior-subject";
-import * as React from "react";
-import "./styles.css";
-import { subject$ } from "./global-store";
-import { Child } from "./child";
+  useBehaviorSubjectSelector,
+} from '@czaplej/use-behavior-subject';
+import * as React from 'react';
+import './styles.css';
+import { subject$ } from './global-store';
+import { Child } from './child';
 
 export default function App() {
   const store = useBehaviorSubjectSelector((state) => state, subject$);
@@ -44,19 +45,19 @@ export default function App() {
       {store.showChild && <Child />}
     </div>
   );
-};
+}
 ```
 
 `Child.tsx`
 
 ```tsx
-import React from "react";
+import React from 'react';
 import {
   useBehaviorSubjectDispatch,
-  useBehaviorSubjectSelector
-} from "@czaplej/use-behavior-subject";
-import { BehaviorSubject } from "rxjs";
-import { subject$ } from "./global-store";
+  useBehaviorSubjectSelector,
+} from '@czaplej/use-behavior-subject';
+import { BehaviorSubject } from 'rxjs';
+import { subject$ } from './global-store';
 type ChildStore = {
   firstName: string;
   lastName: string;
@@ -65,8 +66,8 @@ type ChildStore = {
 };
 
 const childSubject$ = new BehaviorSubject<ChildStore>({
-  firstName: "Child",
-  lastName: "child Data"
+  firstName: 'Child',
+  lastName: 'child Data',
 });
 export function Child() {
   const store = useBehaviorSubjectSelector((state) => state, subject$);
@@ -103,8 +104,9 @@ export function Child() {
 ```
 
 `global-store.ts`
+
 ```tsx
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from 'rxjs';
 
 export type Store = {
   firstName: string;
@@ -113,8 +115,8 @@ export type Store = {
   showChild?: boolean;
 };
 export const subject$ = new BehaviorSubject<Store>({
-  firstName: "newbie",
-  lastName: "lastName newbie"
+  firstName: 'newbie',
+  lastName: 'lastName newbie',
 });
 ```
 

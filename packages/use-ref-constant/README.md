@@ -7,7 +7,6 @@ Remember the initial value of function
 
 ## Installation
 
-
 #### npm
 
 ```bash

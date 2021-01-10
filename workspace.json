@@ -38,6 +38,11 @@
                 "glob": "README.md",
                 "input": ".",
                 "output": "."
+              },
+              {
+                "glob": "LICENSE.md",
+                "input": ".",
+                "output": "."
               }
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
@@ -91,6 +96,11 @@
                 "glob": "README.md",
                 "input": "packages/use-ref-constant",
                 "output": "/"
+              },
+              {
+                "glob": "LICENSE.md",
+                "input": ".",
+                "output": "."
               }
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
@@ -150,6 +160,11 @@
                 "glob": "README.md",
                 "input": "packages/use-behavior-subject",
                 "output": "/"
+              },
+              {
+                "glob": "LICENSE.md",
+                "input": ".",
+                "output": "."
               }
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
@@ -305,8 +320,13 @@
             "assets": [
               {
                 "glob": "README.md",
-                "input": "/packages/decopyfy",
+                "input": "packages/decopyfy",
                 "output": "/"
+              },
+              {
+                "glob": "LICENSE.md",
+                "input": ".",
+                "output": "."
               }
             ]
           },
@@ -349,6 +369,11 @@
                 "glob": "README.md",
                 "input": "packages/decomparefy",
                 "output": "/"
+              },
+              {
+                "glob": "LICENSE.md",
+                "input": ".",
+                "output": "."
               }
             ]
           },
@@ -389,6 +414,11 @@
             "assets": [
               {
                 "glob": "README.md",
+                "input": ".",
+                "output": "."
+              },
+              {
+                "glob": "LICENSE.md",
                 "input": ".",
                 "output": "."
               }

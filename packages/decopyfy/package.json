@@ -1,7 +1,18 @@
 {
   "name": "decopyfy",
   "version": "1.0.0",
-  "description": "deep copy data",
-  "author": "czaplej <czaplejewicz.krzysztof@gmail.com>",
-  "license": "MIT"
+  "description": "Deep copy data",
+  "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/czaplej/czaplej.git",
+    "directory": "packages/decopyfy"
+  },
+  "homepage": "https://github.com/czaplej/czaplej/tree/master/packages/decopyfy",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "deep-copy",
+    "copy"
+  ]
 }
