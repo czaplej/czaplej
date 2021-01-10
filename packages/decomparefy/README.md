@@ -28,19 +28,19 @@ isEqual(1, 1); //=> true
 isEqual({}, {}); //=> true
 isEqual('foo', 'foo'); //=> true
 isEqual([1, 2, 3], [1, 2, 3]); //=> true
-isEqual(() => {}, () => {}); //=> true
+isEqual(
+  () => {},
+  () => {}
+); //=> true
 isEqual(/foo/, /foo/); //=> true
 isEqual(null, null); //=> true
 isEqual(NaN, NaN); //=> true
 isEqual([], []); //=> true
-isEqual(
-  [{ a:1 }, [{ b:{ c:[1] } }]],
-  [{ a:1 }, [{ b:{ c:[1] } }]]
-); //=> true
+isEqual([{ a: 1 }, [{ b: { c: [1] } }]], [{ a: 1 }, [{ b: { c: [1] } }]]); //=> true
 
 isEqual(1, '1'); //=> false
 isEqual(null, undefined); //=> false
-isEqual({ a:1, b:[2,3] }, { a:1, b:[2,5] }); //=> false
+isEqual({ a: 1, b: [2, 3] }, { a: 1, b: [2, 5] }); //=> false
 isEqual(/foo/i, /bar/g); //=> false
 ```
 
