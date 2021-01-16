@@ -7,6 +7,7 @@ export function checkHelpArg(help: boolean) {
     info('Available arguments:');
     info('--help get information about all arguments');
     info('--target A directory where the generated files are placed.');
+    info('--modelTarget A directory where the generated model file is placed.');
     info('--targetName A file name for constant.');
     info('--targetModelName A file name for interfaces.');
     info('For more information please check out github page');

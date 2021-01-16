@@ -15,6 +15,7 @@ const getThemeNameRegex = /\[(.*)]/g;
 export function generateFiles(
   filePath: string,
   targetPath: string,
+  targetModelPath: string,
   targetName = './generatedFile.ts',
   targetModelName = './generatedFileModel.ts'
 ) {
@@ -40,7 +41,7 @@ export function generateFiles(
 
   const [constTsFilePath, modelTsFilePath] = [
     path.resolve(targetPath, targetName),
-    path.resolve(targetPath, targetModelName),
+    path.resolve(targetModelPath, targetModelName),
   ];
   const [tmpconstTsFile, tmpmodelTsFile] = [
     createTempFile(constTsFilePath),

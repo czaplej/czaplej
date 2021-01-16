@@ -269,6 +269,14 @@ Type: `string`
 
 Default: `./`
 
+#### modelTarget
+
+A directory where the generated model file is placed. 
+
+Type: `string`
+
+Default: `./` or same as target
+
 #### targetName
 
 A file name for constant.

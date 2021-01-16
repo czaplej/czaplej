@@ -6,17 +6,21 @@ import { error, success } from '../lib/log-helper';
 import { checkHelpArg } from '../lib/check-help-arg';
 
 try {
-  const { target, targetName, targetModelName, help } = yargs(
+  const { target, modelTarget, targetName, targetModelName, help } = yargs(
     process.argv.slice(2)
   );
   checkHelpArg(help);
   const filePath = path.resolve(process.cwd(), process.argv[2]);
-  const targetPath = path.resolve(process.cwd(), target || './');
+  const [targetPath, modelTargetPath] = [
+    path.resolve(process.cwd(), target || './'),
+    path.resolve(process.cwd(), modelTarget || target || './'),
+  ];
   const { length } = filePath.split('/');
   const fileName = filePath.split('/')[length - 1].split('.')[0];
   generateFiles(
     filePath,
     targetPath,
+    modelTargetPath,
     targetName || `${fileName}-const.ts`,
     targetModelName || `${fileName}-model.ts`
   );
