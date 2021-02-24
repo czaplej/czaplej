@@ -271,7 +271,7 @@ Default: `./`
 
 #### modelTarget
 
-A directory where the generated model file is placed. 
+A directory where the generated model file is placed.
 
 Type: `string`
 

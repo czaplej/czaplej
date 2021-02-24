@@ -1,6 +1,6 @@
 {
   "name": "@czaplej/use-ref-constant",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "description": "Remember initial value",
   "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
   "repository": {

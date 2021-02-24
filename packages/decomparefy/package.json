@@ -1,6 +1,6 @@
 {
-  "name": "decomparefy",
-  "version": "1.0.0",
+  "name": "@czaplej/decomparefy",
+  "version": "0.10.0",
   "description": "Deep data comparisons",
   "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
   "repository": {

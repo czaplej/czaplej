@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { useRefConstant } from '@czaplej/use-ref-constant';
-import { isEqual } from 'decomparefy';
+import isEqual from 'react-fast-compare';
 
 type UseSubjectProps<T extends unknown> = {
   initialState?: T;
@@ -10,8 +10,10 @@ type UseSubjectProps<T extends unknown> = {
 
 export const useSubject = <T extends unknown>(props: UseSubjectProps<T>) => {
   const { initialState, pipe } = props;
-  const subject$ = useRefConstant(() => new BehaviorSubject<T>(initialState));
-  const observable$ = useRefConstant(() => (pipe ? pipe(subject$) : subject$));
+  const subject$ = useRefConstant(() => new BehaviorSubject<T>(initialState))
+    .current;
+  const observable$ = useRefConstant(() => (pipe ? pipe(subject$) : subject$))
+    .current;
   const [state, setState] = useState<T>(initialState);
   useEffect(() => {
     const subscription = observable$.subscribe({

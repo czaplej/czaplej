@@ -1,0 +1,212 @@
+export const tree4 = [
+  {
+    id: 102,
+    person: {
+      id: 102,
+      avatar: undefined,
+      department: '',
+      name: 'Hendy kinger',
+      title: 'Manager',
+      totalReports: 0,
+    },
+    hasChild: true,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 455,
+    person: {
+      id: 455,
+      avatar: undefined,
+      department: '',
+      name: 'Kate baker',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 444,
+    person: {
+      id: 444,
+      avatar: undefined,
+      department: '',
+      name: 'John medis',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: [],
+  },
+
+  {
+    id: 456,
+    person: {
+      id: 456,
+      avatar: undefined,
+      department: '',
+      name: 'Brett lee',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: [],
+  },
+];
+
+export const tree3 = [
+  {
+    id: 70,
+    person: {
+      id: 70,
+      avatar: undefined,
+      department: '',
+      name: 'Kenneth dom',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 45,
+    person: {
+      id: 45,
+      avatar: undefined,
+      department: '',
+      name: 'Kin baker',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: tree4,
+  },
+];
+
+export const tree2 = [
+  {
+    id: 56,
+    person: {
+      id: 56,
+      avatar: undefined,
+      department: '',
+      name: 'Sam John',
+      title: 'HR',
+      totalReports: 2,
+      link: 'https://github.com/unicef/react-org-chart',
+    },
+    hasChild: true,
+    hasParent: true,
+    children: tree3,
+  },
+  {
+    id: 66,
+    person: {
+      id: 66,
+      avatar: undefined,
+      department: '',
+      name: 'John doe',
+      title: 'Developer',
+      totalReports: 0,
+      link: 'https://github.com/unicef/react-org-chart',
+    },
+    hasChild: true,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 76,
+    person: {
+      id: 76,
+      avatar: undefined,
+      department: '',
+      name: 'Emilia rogers',
+      title: 'Developer',
+      totalReports: 0,
+      link: 'https://github.com/unicef/react-org-chart',
+    },
+    hasChild: true,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 60,
+    person: {
+      id: 60,
+      avatar: undefined,
+      department: '',
+      name: 'Ellen cott',
+      title: 'IT Officer',
+      totalReports: 0,
+    },
+    hasChild: false,
+    hasParent: true,
+    children: tree3,
+  },
+];
+
+export const tree1 = [
+  {
+    id: 36,
+    person: {
+      id: 36,
+      avatar: undefined,
+      department: '',
+      name: 'Tomasz polaski',
+      title: 'IT Specialist',
+      totalReports: 4,
+    },
+    hasChild: true,
+    hasParent: true,
+    // children: [],
+  },
+  {
+    id: 32,
+    person: {
+      id: 32,
+      avatar: undefined,
+      department: '',
+      name: 'Emanuel walker',
+      title: 'IT Specialist',
+      totalReports: 0,
+    },
+    hasChild: true,
+    hasParent: true,
+    children: [],
+  },
+  {
+    id: 25,
+    person: {
+      id: 25,
+      avatar: undefined,
+      department: '',
+      name: 'Kerry peter',
+      title: 'IT Specialist',
+      totalReports: 3,
+    },
+    hasChild: true,
+    hasParent: true,
+    children: tree2,
+  },
+];
+
+export const tree = {
+  id: 100,
+  person: {
+    id: 100,
+    avatar: undefined,
+    department: '',
+    name: 'Henry monger',
+    title: 'Manager',
+    totalReports: 3,
+  },
+  hasChild: true,
+  hasParent: true,
+  children: tree1,
+};

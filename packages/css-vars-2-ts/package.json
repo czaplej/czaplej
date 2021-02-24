@@ -1,6 +1,6 @@
 {
-  "name": "css-vars-2-ts",
-  "version": "0.0.5",
+  "name": "@czaplej/css-vars-2-ts",
+  "version": "0.1.0",
   "description": "Generate typescript interfaces and constants from .css/.scss/.sass",
   "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
   "repository": {

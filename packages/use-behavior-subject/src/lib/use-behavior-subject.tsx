@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import 'regenerator-runtime/runtime';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { isEqual } from 'decomparefy';
+import isEqual from 'react-fast-compare';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { skip } from 'rxjs/operators';
-import { clone } from 'decopyfy';
 
 function comparePrevStateAndNewValue<T extends unknown>(
   subject: BehaviorSubject<T>,
@@ -18,9 +18,8 @@ function comparePrevStateAndNewValue<T extends unknown>(
   } else {
     let newStateUpdate;
     if (Array.isArray(prevState)) {
-      newStateUpdate = [...prevState, ...(newState as T[])];
-      if (!compareFn(newStateUpdate, prevState)) {
-        subject.next(newStateUpdate as T);
+      if (!compareFn(newState, prevState)) {
+        subject.next(newState as T);
       }
     } else {
       // eslint-disable-next-line @typescript-eslint/ban-types
@@ -75,7 +74,7 @@ export const useBehaviorSubject = <T extends unknown>(
     [subject]
   );
 
-  return { state: clone(subject.value), setInitialState, setState };
+  return { state: subject.value, setInitialState, setState };
 };
 
 export const createSubject = <T extends unknown>(
@@ -111,7 +110,7 @@ export const useBehaviorSubjectSelector = <TState, TSelected>(
       subs?.unsubscribe();
     };
   }, [selectorValue.current, subject]);
-  return selector(clone(subject.getValue()));
+  return selector(subject.getValue());
 };
 
 type UseBehaviorSubjectSetStateAction<S> =
@@ -131,7 +130,7 @@ export const useBehaviorSubjectDispatch = <T extends unknown>(
       const prevState = subject.getValue();
       const value =
         typeof callback === 'function'
-          ? callback(clone(subject.getValue()))
+          ? callback(subject.getValue())
           : callback;
       comparePrevStateAndNewValue(subject, value, prevState);
     },

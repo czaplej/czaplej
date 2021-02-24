@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/packages/decomparefy',
     '<rootDir>/packages/utilities',
     '<rootDir>/packages/css-vars-2-ts',
+    '<rootDir>/packages/demo',
   ],
 };
