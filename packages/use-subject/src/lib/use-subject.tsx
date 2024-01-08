@@ -3,12 +3,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { useRefConstant } from '@czaplej/use-ref-constant';
 import isEqual from 'react-fast-compare';
 
-type UseSubjectProps<T extends unknown> = {
+type UseSubjectProps<T extends any> = {
   initialState?: T;
   pipe?: (subject: BehaviorSubject<T>) => Observable<T>;
 };
 
-export const useSubject = <T extends unknown>(props: UseSubjectProps<T>) => {
+export const useSubject = <T extends any>(props: UseSubjectProps<T>) => {
   const { initialState, pipe } = props;
   const subject$ = useRefConstant(() => new BehaviorSubject<T>(initialState))
     .current;
@@ -35,7 +35,7 @@ export const useSubject = <T extends unknown>(props: UseSubjectProps<T>) => {
   return { state, service$, setState: service$.setState };
 };
 
-function comparePrevStateAndNewValue<T extends unknown>(
+function comparePrevStateAndNewValue<T extends any>(
   subject: BehaviorSubject<T>,
   newState: Partial<T> | T,
   prevState: T = subject.getValue(),

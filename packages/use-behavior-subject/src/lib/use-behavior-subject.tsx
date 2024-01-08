@@ -5,7 +5,7 @@ import isEqual from 'react-fast-compare';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { skip } from 'rxjs/operators';
 
-function comparePrevStateAndNewValue<T extends unknown>(
+function comparePrevStateAndNewValue<T extends any>(
   subject: BehaviorSubject<T>,
   newState: Partial<T> | T,
   prevState: T = subject.getValue(),
@@ -31,13 +31,13 @@ function comparePrevStateAndNewValue<T extends unknown>(
   }
 }
 
-type UseBehaviorSubjectProps<T extends unknown> = {
+type UseBehaviorSubjectProps<T extends any> = {
   subject: BehaviorSubject<T>;
   initialState?: T;
   pipe?: (subject: BehaviorSubject<T>) => Observable<T>;
 };
 
-export const useBehaviorSubject = <T extends unknown>(
+export const useBehaviorSubject = <T extends any>(
   props: UseBehaviorSubjectProps<T>
 ) => {
   const { subject, initialState, pipe } = props;
@@ -77,7 +77,7 @@ export const useBehaviorSubject = <T extends unknown>(
   return { state: subject.value, setInitialState, setState };
 };
 
-export const createSubject = <T extends unknown>(
+export const createSubject = <T extends any>(
   initialValue?: T
 ): BehaviorSubject<T> => {
   return new BehaviorSubject<T>(initialValue);
@@ -117,7 +117,7 @@ type UseBehaviorSubjectSetStateAction<S> =
   | Partial<S>
   | ((prevState: S) => Partial<S>);
 
-export const useBehaviorSubjectDispatch = <T extends unknown>(
+export const useBehaviorSubjectDispatch = <T extends any>(
   subject: BehaviorSubject<T>
 ) => {
   return useCallback(

@@ -1,6 +1,6 @@
 {
   "name": "@czaplej/use-behavior-subject",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "state  management alternative",
   "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@czaplej/decopyfy",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Deep copy data",
   "author": "Krzysztof Czaplejewicz <czaplejewicz.krzysztof@gmail.com>",
   "repository": {
